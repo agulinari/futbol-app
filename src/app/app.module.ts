@@ -21,7 +21,8 @@ import { MatchFormComponent } from './match-form/match-form.component';
 import { PlayerService } from './player.service';
 import { MatchService } from './match.service';
 import { AppRoutingModule } from './/app-routing.module';
-
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AppRoutingModule } from './/app-routing.module';
     ChartsModule,
     DataTableModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [PlayerService, MatchService],
   bootstrap: [AppComponent]

@@ -4,6 +4,9 @@ import { of } from 'rxjs/observable/of';
 import { Player } from './model/player';
 import { PlayerStats } from './model/player-stats';
 import { PlayerEvolution } from './model/player-evolution';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
+
 
 const PLAYERS = [
   {
@@ -14,8 +17,8 @@ const PLAYERS = [
     'lastname': 'Sanchez',
     'dateofbirth': 'June 27, 2013',
     'position': 'Delantero',
-    'height' : 175,
-    'weight' : 75
+    'height': 175,
+    'weight': 75
   },
   {
     'id': 2,
@@ -25,8 +28,8 @@ const PLAYERS = [
     'lastname': 'Maqueira',
     'dateofbirth': 'June 27, 2013',
     'position': 'Delantero',
-    'height' : 175,
-    'weight' : 75
+    'height': 175,
+    'weight': 75
   },
   {
     'id': 3,
@@ -36,8 +39,8 @@ const PLAYERS = [
     'lastname': 'Piccinali',
     'dateofbirth': 'June 27, 2013',
     'position': 'Arquero',
-    'height' : 175,
-    'weight' : 75
+    'height': 175,
+    'weight': 75
   },
   {
     'id': 4,
@@ -47,8 +50,8 @@ const PLAYERS = [
     'lastname': 'Linari',
     'dateofbirth': 'June 27, 2013',
     'position': 'Delantero',
-    'height' : 175,
-    'weight' : 75
+    'height': 175,
+    'weight': 75
   },
   {
     'id': 5,
@@ -58,8 +61,8 @@ const PLAYERS = [
     'lastname': 'Criniti',
     'dateofbirth': 'June 27, 2013',
     'position': 'Defensor',
-    'height' : 175,
-    'weight' : 75
+    'height': 175,
+    'weight': 75
   },
   {
     'id': 6,
@@ -69,8 +72,8 @@ const PLAYERS = [
     'lastname': 'Giacoletto',
     'dateofbirth': 'June 27, 2013',
     'position': 'Volante',
-    'height' : 175,
-    'weight' : 75
+    'height': 175,
+    'weight': 75
   }
 ];
 
@@ -198,22 +201,57 @@ const EVOLUTION = [
 @Injectable()
 export class PlayerService {
 
-  constructor() { }
+  private playersUrl = 'api/players';
 
-  getPlayers():  Observable<Player[]> {
-    return of(PLAYERS);
+  constructor(private http: HttpClient) { }
+
+  getPlayers(): Observable<Player[]> {
+    // return of(PLAYERS);
+    return this.http.get<Player[]>(this.playersUrl)
+      .pipe(
+      catchError(this.handleError('getPlayers', []))
+      );
   }
 
   getPlayer(id: number): Observable<Player> {
-    return of(PLAYERS[--id]);
+    // return of(PLAYERS[--id]);
+    const url = `${this.playersUrl}/${id}`;
+    return this.http.get<Player>(url).pipe(
+      catchError(this.handleError<Player>(`getPlayer id=${id}`))
+    );
   }
 
   getStats(id: number): Observable<PlayerStats> {
-    return of(STATS[--id]);
+    // return of(STATS[--id]);
+    const url = `${this.playersUrl}/${id}/stats`;
+    return this.http.get<PlayerStats>(url).pipe(
+      catchError(this.handleError<PlayerStats>(`getStats id=${id}`))
+    );
   }
 
   getEvolution(id: number): Observable<PlayerEvolution[]> {
-    return of(EVOLUTION);
+    // return of(EVOLUTION);
+    const url = `${this.playersUrl}/${id}/evolution`;
+    return this.http.get<PlayerEvolution[]>(url).pipe(
+      catchError(this.handleError<PlayerEvolution[]>(`getEvolution id=${id}`))
+    );
+  }
+
+  /**
+ * Handle Http operation that failed.
+ * Let the app continue.
+ * @param operation - name of the operation that failed
+ * @param result - optional value to return as the observable result
+ */
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
   }
 
 }

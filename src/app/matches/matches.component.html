@@ -1,0 +1,28 @@
+<section widget class="widget">
+  <header>
+    <h4>
+      Partidos
+    </h4>
+  </header>
+  <div class="widget-body">
+    <h5 class="tab-header">
+      <span class="badge badge-warning">
+        <i class="fa fa-trophy"></i>
+      </span> Torneo Pato Capitan</h5>
+
+    <ul class="news-list" >
+
+      <li *ngFor="let match of matches" (click)="onSelect(match)">
+        <img [src]="match.team1.photo" alt="" class="float-left rounded-circle" />
+        <img [src]="match.team2.photo" alt="" class="float-right rounded-circle" />        
+        <div class="news-item-info text-center">
+          <div class="name">
+            <a href="#">{{match.date}}</a>
+          </div>
+          <div class="position">{{match.place}}</div>
+          <div class="time">{{match.team1.name}} {{match.team1.goals}} - {{match.team2.goals}} {{match.team2.name}}</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

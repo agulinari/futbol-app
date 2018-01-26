@@ -1,0 +1,43 @@
+<section widget class="widget">
+    <header>
+      <h4>
+        <i class="fa fa-cogs"></i> Estadisticas</h4>
+    </header>
+    <div class="widget-body">
+        <ul class="overall-stats">
+            <li>
+                <h5 class="mt-0 mb-xs weight-normal">Partidos Jugados</h5>
+                <div class="progress bg-blue-light mt-0">
+                  <div class="progress-bar" role="progressbar" [style]="'width: '+stats.matches+ '%'" aria-valuenow="stats.matches" aria-valuemin="0" aria-valuemax="100">{{stats.matches}}%</div>
+                </div>
+            </li>
+            <li>
+                <h5 class="mt-0 mb-xs weight-normal">Goles Convertidos</h5>
+                <div class="progress bg-blue-light mt-0">
+                  <div class="progress-bar bg-success" role="progressbar" [style]="'width: '+stats.goals+ '%'" aria-valuenow="stats.goals" aria-valuemin="0" aria-valuemax="100">{{stats.goals}}%</div>
+                </div>
+            </li>
+            <li>
+                <h5 class="mt-0 mb-xs weight-normal">Asistencias</h5>
+                <div class="progress bg-blue-light mt-0">
+                  <div class="progress-bar bg-warning" role="progressbar" [style]="'width: '+stats.assists+ '%'" aria-valuenow="stats.assists" aria-valuemin="0" aria-valuemax="100">{{stats.assists}}%</div>
+                </div>
+            </li>
+            <li>
+                <h5 class="mt-0 mb-xs weight-normal">Faltas</h5>
+                <div class="progress bg-blue-light mt-0">
+                  <div class="progress-bar bg-danger" role="progressbar" [style]="'width: '+stats.fouls+ '%'" aria-valuenow="stats.fouls" aria-valuemin="0" aria-valuemax="100">{{stats.fouls}}%</div>
+                </div>
+            </li>
+          </ul>
+        <div style="display: block">
+            <canvas baseChart
+                    [datasets]="radarChartData"
+                    [labels]="radarChartLabels"
+                    [options]="radarChartOptions"
+                    [chartType]="radarChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+         </div>
+    </div>
+  </section>

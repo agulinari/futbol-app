@@ -1,0 +1,53 @@
+<section widget class="widget">
+    <header>
+      <h4>
+         {{match.date}}
+      </h4>
+    </header>
+    <div class="widget-body">
+    <h3>Estad&iacute;sticas del <span class="fw-semi-bold">Partido</span></h3>
+
+    <table #tb1 class="table table-striped">
+      <thead>
+      <tr>
+        <th style="text-align:right">{{match.team1.name}}</th>
+        <th style="text-align:center">VS</th>
+        <th style="text-align:left">{{match.team2.name}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td align="right">{{match.team1.goals}}</td>
+        <td align="center">Goles</td>
+        <td align="left">{{match.team2.goals}}</td>
+      </tr>
+      <tr>
+        <td align="right">{{match.team1.shoots}}</td>
+        <td align="center">Disparos</td>
+        <td align="left">{{match.team2.shoots}}</td>
+      </tr>
+      <tr>
+        <td align="right">{{match.team1.fouls}}</td>
+        <td align="center">Faltas</td>
+        <td align="left">{{match.team2.fouls}}</td>
+      </tr>
+      <tr>
+        <td align="right">{{match.team1.possession}}%</td>
+        <td align="center">Posesi&oacute;n</td>
+        <td align="left">{{match.team2.possession}}%</td>
+      </tr>
+      </tbody>
+    </table>
+    <br>
+    <div style="display: block">
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+</div>
+</section>

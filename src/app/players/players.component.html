@@ -1,0 +1,27 @@
+<section widget class="widget">
+  <header>
+    <h4>
+      Jugadores
+    </h4>
+  </header>
+  <div class="widget-body">
+    <h5 class="tab-header">
+        <span class="badge badge-warning">
+            <i class="fa fa-trophy"></i>
+          </span> Torneo Pato Capitan</h5>
+
+    <ul class="news-list" >
+
+      <li *ngFor="let player of players" (click)="onSelect(player)">
+        <img [src]="player.photo" alt="" class="float-left rounded-circle" />
+        <div class="news-item-info">
+          <div class="name">
+            <a href="#">{{player.firstname}} "{{player.nickname}}" {{player.lastname}}</a>
+          </div>
+          <div class="position">{{player.position}}</div>
+          <div class="time">{{player.dateofbirth}}</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

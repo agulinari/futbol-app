@@ -1,0 +1,93 @@
+<h2 class="page-title">Informaci&oacute;n del Jugador
+  <small>Out of the box form</small>
+</h2>
+<div class="row">
+  <div class="col-lg-6">
+    <section widget class="widget">
+      <header>
+        <h4>
+          <i class="fa fa-user"></i> Perfil
+        </h4>
+      </header>
+      <div class="widget-body">
+        <form id="player-form" class="form-horizontal form-label-left parsleyjs" novalidate="novalidate" method="post" data-parsley-priority-enabled="false"
+          data-parsley-excluded="input[name=gender]">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="text-center">
+                <img class="rounded-circle" [src]="player.photo" alt="64x64" style="height: 112px;">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h3 class="mt-md mb-xs">{{player.firstname}} {{player.lastname}}</h3>
+              <address>
+                <strong>{{player.position}}</strong><br>
+                <abbr title="Height">Altura:</abbr> {{player.height}} cm
+                <abbr title="Weight">Peso:</abbr> {{player.weight}} kg
+              </address>
+            </div>
+          </div>
+          <fieldset class="mt-md">
+            <legend>Informaci&oacute;n Personal
+              <small>Datos del Jugador</small>
+            </legend>
+          </fieldset>
+          <fieldset>
+            <div class="form-group row">
+              <label class="col-form-label col-md-4" for="nickname">Apodo</label>
+
+              <div class="col-md-4">
+                <input type="text" [(ngModel)]="player.nickname" id="nickname" name="nickname" class="form-control input-transparent">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-form-label col-md-4" for="first-name">Nombre
+                <span class="required">*</span>
+              </label>
+
+              <div class="col-md-8">
+                <input type="text" [(ngModel)]="player.firstname" id="first-name" name="first-name" required="required" class="form-control input-transparent">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-form-label col-md-4" for="last-name">Apellido
+                <span class="required">*</span>
+              </label>
+
+              <div class="col-md-8">
+                <input type="text" [(ngModel)]="player.lastname" id="last-name" name="last-name" required="required" class="form-control input-transparent">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="date-of-birth" class="col-form-label col-md-4">Fecha de Nacimiento
+                <span class="required">*</span>
+              </label>
+
+              <div class="col-md-8">
+                  <input type="text" [(ngModel)]="player.dateofbirth" id="date-of-birth" name="date-of-birth" required="required" class="form-control input-transparent">
+                </div>
+            </div>
+          </fieldset>
+          <div class="form-actions">
+            <div class="btn-toolbar justify-content-center">
+              <button type="submit" class="btn btn-primary">Aceptar</button>
+              <button type="button" class="btn btn-secondary">Cancelar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+  <div class="col-lg-6">
+    <app-player-detail-stats></app-player-detail-stats>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <app-matches player="1"></app-matches>
+  </div>
+  <div class="col-lg-6">
+    <app-player-matches-stats></app-player-matches-stats>
+  </div>
+</div>

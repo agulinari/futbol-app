@@ -1,0 +1,19 @@
+<section widget class="widget">
+    <header>
+      <h4>
+        <i class="fa fa-cogs"></i> Evoluci&oacute;n</h4>
+    </header>
+    <div class="widget-body">
+        <div style="display: block;">
+            <canvas baseChart width="400" height="400"
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [colors]="lineChartColors"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+        </div>
+    </div>
+</section>

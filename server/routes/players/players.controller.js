@@ -1,5 +1,9 @@
-const pg = require('pg');
+const { Pool, Client } = require('pg')
 const connectionString = process.env.DATABASE_URL
+
+const pool = new Pool({
+    connectionString: connectionString,
+  });
 
 const PLAYERS = [
     {
@@ -196,7 +200,7 @@ exports.index = function(req, res) {
    // return res.status(200).json(PLAYERS);
    const results = [];
    // Get a Postgres client from the connection pool
-   pg.connect(connectionString, (err, client, done) => {
+   pool.connect((err, client, done) => {
      // Handle connection errors
      if(err) {
        done();
@@ -223,7 +227,7 @@ exports.show = function(req, res) {
        // return res.status(200).json(PLAYERS);
    const results = [];
    // Get a Postgres client from the connection pool
-   pg.connect(connectionString, (err, client, done) => {
+   pool.connect((err, client, done) => {
      // Handle connection errors
      if(err) {
        done();

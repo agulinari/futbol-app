@@ -207,7 +207,7 @@ exports.index = function(req, res) {
        console.log(err);
        return res.status(500).json({success: false, data: err});
      }
-     const querystring = 'SELECT player_id as id, player_photo as photo, nickname, first_name as fistname, last_name as lastname, birth_date as dateofbirth, player_position as position, player_height as height, player_weight as weight FROM players ORDER BY player_id ASC;'
+     const querystring = 'SELECT player_id as id, player_photo as photo, nickname, first_name as firstname, last_name as lastname, birth_date as dateofbirth, player_position as position, player_height as height, player_weight as weight FROM players ORDER BY player_id ASC;'
      // SQL Query > Select Data
      const query = client.query(new Query(querystring));
      // Stream results back one row at a time
@@ -235,7 +235,7 @@ exports.show = function(req, res) {
        console.log(err);
        return res.status(500).json({success: false, data: err});
      }
-     const querystring = 'SELECT player_id as id, player_photo as photo, nickname, first_name as fistname, last_name as lastname, birth_date as dateofbirth, player_position as position, player_height as height, player_weight as weight FROM players WHERE player_id='+id+';';
+     const querystring = 'SELECT player_id as id, player_photo as photo, nickname, first_name as firstname, last_name as lastname, birth_date as dateofbirth, player_position as position, player_height as height, player_weight as weight FROM players WHERE player_id='+id+';';
      // SQL Query > Select Data
      const query = client.query(new Query(querystring));
      // Stream results back one row at a time

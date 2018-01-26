@@ -1,4 +1,5 @@
-// Import model
+const pg = require('pg');
+const connectionString = process.env.DATABASE_URL
 
 const PLAYERS = [
     {
@@ -192,12 +193,56 @@ const PLAYERS = [
 
 // Get list of players
 exports.index = function(req, res) {
-    return res.status(200).json(PLAYERS);
+   // return res.status(200).json(PLAYERS);
+   const results = [];
+   // Get a Postgres client from the connection pool
+   pg.connect(connectionString, (err, client, done) => {
+     // Handle connection errors
+     if(err) {
+       done();
+       console.log(err);
+       return res.status(500).json({success: false, data: err});
+     }
+     // SQL Query > Select Data
+     const query = client.query('SELECT player_id as id, player_photo as photo, nickname, first_name as fistname, last_name as lastname, birth_date as dateofbirth, player_position as position, player_height as height, player_weight as weight FROM players ORDER BY player_id ASC;');
+     // Stream results back one row at a time
+     query.on('row', (row) => {
+       results.push(row);
+     });
+     // After all data is returned, close connection and return results
+     query.on('end', () => {
+       done();
+       return res.json(results);
+     });
+   });
 };
 // Get a single player
 exports.show = function(req, res) {
     let id = req.params.id;
-    return res.status(200).json(PLAYERS[--id]);
+    // return res.status(200).json(PLAYERS[--id]);
+       // return res.status(200).json(PLAYERS);
+   const results = [];
+   // Get a Postgres client from the connection pool
+   pg.connect(connectionString, (err, client, done) => {
+     // Handle connection errors
+     if(err) {
+       done();
+       console.log(err);
+       return res.status(500).json({success: false, data: err});
+     }
+     const querystring = 'SELECT player_id as id, player_photo as photo, nickname, first_name as fistname, last_name as lastname, birth_date as dateofbirth, player_position as position, player_height as height, player_weight as weight FROM players WHERE player_id='+id+';';
+     // SQL Query > Select Data
+     const query = client.query(querystring);
+     // Stream results back one row at a time
+     query.on('row', (row) => {
+       results.push(row);
+     });
+     // After all data is returned, close connection and return results
+     query.on('end', () => {
+       done();
+       return res.json(results[0]);
+     });
+   });
 };
 // Get a single player stats
 exports.stats = function(req, res) {

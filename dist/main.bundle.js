@@ -135,26 +135,24 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_datatable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular2_datatable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__search_pipe_pipe__ = __webpack_require__("../../../../../src/app/search-pipe.pipe.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__player_detail_stats_player_detail_stats_component__ = __webpack_require__("../../../../../src/app/player-detail-stats/player-detail-stats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__player_matches_player_matches_component__ = __webpack_require__("../../../../../src/app/player-matches/player-matches.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__player_matches_stats_player_matches_stats_component__ = __webpack_require__("../../../../../src/app/player-matches-stats/player-matches-stats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__match_detail_match_detail_component__ = __webpack_require__("../../../../../src/app/match-detail/match-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__match_detail_stats_match_detail_stats_component__ = __webpack_require__("../../../../../src/app/match-detail-stats/match-detail-stats.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__match_summary_match_summary_component__ = __webpack_require__("../../../../../src/app/match-summary/match-summary.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__players_players_component__ = __webpack_require__("../../../../../src/app/players/players.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__matches_matches_component__ = __webpack_require__("../../../../../src/app/matches/matches.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__player_form_player_form_component__ = __webpack_require__("../../../../../src/app/player-form/player-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__match_form_match_form_component__ = __webpack_require__("../../../../../src/app/match-form/match-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__player_service__ = __webpack_require__("../../../../../src/app/player.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__match_service__ = __webpack_require__("../../../../../src/app/match.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__player_matches_stats_player_matches_stats_component__ = __webpack_require__("../../../../../src/app/player-matches-stats/player-matches-stats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__match_detail_match_detail_component__ = __webpack_require__("../../../../../src/app/match-detail/match-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__match_detail_stats_match_detail_stats_component__ = __webpack_require__("../../../../../src/app/match-detail-stats/match-detail-stats.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__match_summary_match_summary_component__ = __webpack_require__("../../../../../src/app/match-summary/match-summary.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__players_players_component__ = __webpack_require__("../../../../../src/app/players/players.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__matches_matches_component__ = __webpack_require__("../../../../../src/app/matches/matches.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__player_form_player_form_component__ = __webpack_require__("../../../../../src/app/player-form/player-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__match_form_match_form_component__ = __webpack_require__("../../../../../src/app/match-form/match-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__player_service__ = __webpack_require__("../../../../../src/app/player.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__match_service__ = __webpack_require__("../../../../../src/app/match.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -186,25 +184,24 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__player_detail_player_detail_component__["a" /* PlayerDetailComponent */],
                 __WEBPACK_IMPORTED_MODULE_7__search_pipe_pipe__["a" /* SearchPipe */],
                 __WEBPACK_IMPORTED_MODULE_8__player_detail_stats_player_detail_stats_component__["a" /* PlayerDetailStatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__player_matches_player_matches_component__["a" /* PlayerMatchesComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__player_matches_stats_player_matches_stats_component__["a" /* PlayerMatchesStatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__match_detail_match_detail_component__["a" /* MatchDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__match_detail_stats_match_detail_stats_component__["a" /* MatchDetailStatsComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__match_summary_match_summary_component__["a" /* MatchSummaryComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__players_players_component__["a" /* PlayersComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__matches_matches_component__["a" /* MatchesComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__player_form_player_form_component__["a" /* PlayerFormComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__match_form_match_form_component__["a" /* MatchFormComponent */]
+                __WEBPACK_IMPORTED_MODULE_9__player_matches_stats_player_matches_stats_component__["a" /* PlayerMatchesStatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__match_detail_match_detail_component__["a" /* MatchDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__match_detail_stats_match_detail_stats_component__["a" /* MatchDetailStatsComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__match_summary_match_summary_component__["a" /* MatchSummaryComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__players_players_component__["a" /* PlayersComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__matches_matches_component__["a" /* MatchesComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__player_form_player_form_component__["a" /* PlayerFormComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__match_form_match_form_component__["a" /* MatchFormComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_5_ng2_charts__["ChartsModule"],
                 __WEBPACK_IMPORTED_MODULE_6_angular2_datatable__["DataTableModule"],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_20__app_routing_module__["a" /* AppRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_21__angular_common_http__["b" /* HttpClientModule */]
+                __WEBPACK_IMPORTED_MODULE_19__app_routing_module__["a" /* AppRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_20__angular_common_http__["b" /* HttpClientModule */]
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_18__player_service__["a" /* PlayerService */], __WEBPACK_IMPORTED_MODULE_19__match_service__["a" /* MatchService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_17__player_service__["a" /* PlayerService */], __WEBPACK_IMPORTED_MODULE_18__match_service__["a" /* MatchService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -628,7 +625,7 @@ var MatchService = /** @class */ (function () {
 /***/ "../../../../../src/app/matches/matches.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"matches\">\n<section widget class=\"widget\">\n  <header>\n    <h4>\n      Partidos\n    </h4>\n  </header>\n  <div class=\"widget-body\">\n    <h5 class=\"tab-header\">\n      <span class=\"badge badge-warning\">\n        <i class=\"fa fa-trophy\"></i>\n      </span> Torneo Pato Capitan</h5>\n\n    <ul class=\"news-list\" >\n\n      <li *ngFor=\"let match of matches\" (click)=\"onSelect(match)\">\n        <img [src]=\"match.team1.photo\" alt=\"\" class=\"float-left rounded-circle\" />\n        <img [src]=\"match.team2.photo\" alt=\"\" class=\"float-right rounded-circle\" />        \n        <div class=\"news-item-info text-center\">\n          <div class=\"name\">\n            <a href=\"#\">{{match.date}}</a>\n          </div>\n          <div class=\"position\">{{match.place}}</div>\n          <div class=\"time\">{{match.team1.name}} {{match.team1.goals}} - {{match.team2.goals}} {{match.team2.name}}</div>\n        </div>\n      </li>\n    </ul>\n  </div>\n</section>\n</div>"
+module.exports = "<div *ngIf=\"matches\">\n<section widget class=\"widget\">\n  <header>\n    <h4><i class=\"fa fa-futbol-o\"></i>\n      Partidos\n    </h4>\n  </header>\n  <div class=\"widget-body\">\n    <h5 class=\"tab-header\">\n      <span class=\"badge badge-warning\">\n        <i class=\"fa fa-trophy\"></i>\n      </span> Torneo Pato Capitan</h5>\n\n    <ul class=\"news-list\" >\n\n      <li *ngFor=\"let match of matches\" (click)=\"onSelect(match)\">\n        <img [src]=\"match.team1.photo\" alt=\"\" class=\"float-left rounded-circle\" />\n        <img [src]=\"match.team2.photo\" alt=\"\" class=\"float-right rounded-circle\" />        \n        <div class=\"news-item-info text-center\">\n          <div class=\"name\">\n            <a href=\"#\">{{match.date}}</a>\n          </div>\n          <div class=\"position\">{{match.place}}</div>\n          <div class=\"time\">{{match.team1.name}} {{match.team1.goals}} - {{match.team2.goals}} {{match.team2.name}}</div>\n        </div>\n      </li>\n    </ul>\n  </div>\n</section>\n</div>"
 
 /***/ }),
 
@@ -708,7 +705,7 @@ var MatchesComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/player-detail-stats/player-detail-stats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"stats\">\n<section widget class=\"widget\">\n    <header>\n      <h4>\n        <i class=\"fa fa-cogs\"></i> Estadisticas</h4>\n    </header>\n    <div class=\"widget-body\">\n        <ul class=\"overall-stats\">\n            <li>\n                <h5 class=\"mt-0 mb-xs weight-normal\">Partidos Jugados</h5>\n                <div class=\"progress bg-blue-light mt-0\">\n                  <div class=\"progress-bar\" role=\"progressbar\" [style]=\"'width: '+stats.matches+ '%'\" aria-valuenow=\"stats.matches\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{stats.matches}}%</div>\n                </div>\n            </li>\n            <li>\n                <h5 class=\"mt-0 mb-xs weight-normal\">Goles Convertidos</h5>\n                <div class=\"progress bg-blue-light mt-0\">\n                  <div class=\"progress-bar bg-success\" role=\"progressbar\" [style]=\"'width: '+stats.goals+ '%'\" aria-valuenow=\"stats.goals\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{stats.goals}}%</div>\n                </div>\n            </li>\n            <li>\n                <h5 class=\"mt-0 mb-xs weight-normal\">Asistencias</h5>\n                <div class=\"progress bg-blue-light mt-0\">\n                  <div class=\"progress-bar bg-warning\" role=\"progressbar\" [style]=\"'width: '+stats.assists+ '%'\" aria-valuenow=\"stats.assists\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{stats.assists}}%</div>\n                </div>\n            </li>\n            <li>\n                <h5 class=\"mt-0 mb-xs weight-normal\">Faltas</h5>\n                <div class=\"progress bg-blue-light mt-0\">\n                  <div class=\"progress-bar bg-danger\" role=\"progressbar\" [style]=\"'width: '+stats.fouls+ '%'\" aria-valuenow=\"stats.fouls\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{stats.fouls}}%</div>\n                </div>\n            </li>\n          </ul>\n        <div style=\"display: block\">\n            <canvas baseChart\n                    [datasets]=\"radarChartData\"\n                    [labels]=\"radarChartLabels\"\n                    [options]=\"radarChartOptions\"\n                    [chartType]=\"radarChartType\"\n                    (chartHover)=\"chartHovered($event)\"\n                    (chartClick)=\"chartClicked($event)\"></canvas>\n         </div>\n    </div>\n  </section>\n</div>"
+module.exports = "<div *ngIf=\"stats\">\n<section widget class=\"widget\">\n    <header>\n      <h4>\n        <i class=\"fa fa-bar-chart\"></i> Estadisticas</h4>\n    </header>\n    <div class=\"widget-body\">\n        <ul class=\"overall-stats\">\n            <li>\n                <h5 class=\"mt-0 mb-xs weight-normal\">Partidos Jugados</h5>\n                <div class=\"progress bg-blue-light mt-0\">\n                  <div class=\"progress-bar\" role=\"progressbar\" [style]=\"'width: '+stats.matches+ '%'\" aria-valuenow=\"stats.matches\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{stats.matches}}%</div>\n                </div>\n            </li>\n            <li>\n                <h5 class=\"mt-0 mb-xs weight-normal\">Goles Convertidos</h5>\n                <div class=\"progress bg-blue-light mt-0\">\n                  <div class=\"progress-bar bg-success\" role=\"progressbar\" [style]=\"'width: '+stats.goals+ '%'\" aria-valuenow=\"stats.goals\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{stats.goals}}%</div>\n                </div>\n            </li>\n            <li>\n                <h5 class=\"mt-0 mb-xs weight-normal\">Asistencias</h5>\n                <div class=\"progress bg-blue-light mt-0\">\n                  <div class=\"progress-bar bg-warning\" role=\"progressbar\" [style]=\"'width: '+stats.assists+ '%'\" aria-valuenow=\"stats.assists\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{stats.assists}}%</div>\n                </div>\n            </li>\n            <li>\n                <h5 class=\"mt-0 mb-xs weight-normal\">Faltas</h5>\n                <div class=\"progress bg-blue-light mt-0\">\n                  <div class=\"progress-bar bg-danger\" role=\"progressbar\" [style]=\"'width: '+stats.fouls+ '%'\" aria-valuenow=\"stats.fouls\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{stats.fouls}}%</div>\n                </div>\n            </li>\n          </ul>\n        <div style=\"display: block\">\n            <canvas baseChart\n                    [datasets]=\"radarChartData\"\n                    [labels]=\"radarChartLabels\"\n                    [options]=\"radarChartOptions\"\n                    [chartType]=\"radarChartType\"\n                    (chartHover)=\"chartHovered($event)\"\n                    (chartClick)=\"chartClicked($event)\"></canvas>\n         </div>\n    </div>\n  </section>\n</div>"
 
 /***/ }),
 
@@ -954,7 +951,7 @@ var PlayerFormComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/player-matches-stats/player-matches-stats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"evol\">\n<section widget class=\"widget\">\n    <header>\n      <h4>\n        <i class=\"fa fa-cogs\"></i> Evoluci&oacute;n</h4>\n    </header>\n    <div class=\"widget-body\">\n        <div style=\"display: block;\">\n            <canvas baseChart width=\"400\" height=\"400\"\n                        [datasets]=\"lineChartData\"\n                        [labels]=\"lineChartLabels\"\n                        [options]=\"lineChartOptions\"\n                        [colors]=\"lineChartColors\"\n                        [legend]=\"lineChartLegend\"\n                        [chartType]=\"lineChartType\"\n                        (chartHover)=\"chartHovered($event)\"\n                        (chartClick)=\"chartClicked($event)\"></canvas>\n        </div>\n    </div>\n</section>\n</div>"
+module.exports = "<div *ngIf=\"evol\">\n<section widget class=\"widget\">\n    <header>\n      <h4>\n        <i class=\"fa fa-line-chart\"></i> Evoluci&oacute;n</h4>\n    </header>\n    <div class=\"widget-body\">\n        <div style=\"display: block;\">\n            <canvas baseChart width=\"400\" height=\"400\"\n                        [datasets]=\"lineChartData\"\n                        [labels]=\"lineChartLabels\"\n                        [options]=\"lineChartOptions\"\n                        [colors]=\"lineChartColors\"\n                        [legend]=\"lineChartLegend\"\n                        [chartType]=\"lineChartType\"\n                        (chartHover)=\"chartHovered($event)\"\n                        (chartClick)=\"chartClicked($event)\"></canvas>\n        </div>\n    </div>\n</section>\n</div>"
 
 /***/ }),
 
@@ -1072,333 +1069,6 @@ var PlayerMatchesStatsComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__player_service__["a" /* PlayerService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]])
     ], PlayerMatchesStatsComponent);
     return PlayerMatchesStatsComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/player-matches/player-matches.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<section class=\"widget angular2-datatable\" widget>\n  <header>\n    <h5>The\n      <span class=\"fw-semi-bold\">Angular</span> Way</h5>\n    <div class=\"widget-controls\">\n      <a data-widgster=\"expand\" title=\"Expand\" href=\"#\">\n        <i class=\"glyphicon glyphicon-chevron-up\"></i>\n      </a>\n      <a data-widgster=\"collapse\" title=\"Collapse\" href=\"#\">\n        <i class=\"glyphicon glyphicon-chevron-down\"></i>\n      </a>\n      <a data-widgster=\"close\" title=\"Close\" href=\"#\">\n        <i class=\"glyphicon glyphicon-remove\"></i>\n      </a>\n    </div>\n  </header>\n  <div class=\"widget-body\">\n    <p>\n      Column sorting, live search, pagination. Built with\n      <a href=\"https://github.com/mariuszfoltak/angular2-datatable\" target=\"_blank\">angular2-datatables</a>\n    </p>\n    <div class=\"mt\">\n      <div class=\"width-200 float-right\">\n        <div class=\"input-group input-group-sm\">\n          <span class=\"input-group-addon\">\n            <i class=\"fa fa-search\"></i>\n          </span>\n          <input class=\"form-control input-transparent\" [(ngModel)]=\"searchText\" type=\"text\">\n        </div>\n      </div>\n      <table class=\"table table-striped table-hover\" [mfData]=\"data\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"10\">\n        <thead>\n          <tr>\n            <th>\n              <mfDefaultSorter by=\"id\">Id</mfDefaultSorter>\n            </th>\n            <th>\n              <mfDefaultSorter by=\"name\">Name</mfDefaultSorter>\n            </th>\n            <th class=\"no-sort hidden-sm-down\">\n              <mfDefaultSorter by=\"info\">Info</mfDefaultSorter>\n            </th>\n            <th class=\"hidden-sm-down\">\n              <mfDefaultSorter by=\"description\">Description</mfDefaultSorter>\n            </th>\n            <th class=\"hidden-sm-down\">\n              <mfDefaultSorter by=\"date\">Date</mfDefaultSorter>\n            </th>\n            <th class=\"no-sort\">\n              <mfDefaultSorter by=\"status\">Status</mfDefaultSorter>\n            </th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr *ngFor=\"let person of mf.data | SearchPipe : searchText\">\n            <td>{{person.id}}</td>\n            <td>\n              <span class=\"fw-semi-bold\">{{person.name}}</span>\n            </td>\n            <td class=\"hidden-sm-down\">\n              <small>\n                <span class=\"fw-semi-bold\">Type:</span>\n                &nbsp; {{person.info.type}}\n              </small>\n              <br>\n              <small>\n                <span class=\"fw-semi-bold\">Dimensions:</span>\n                &nbsp; {{person.info.dimensions}}\n              </small>\n            </td>\n            <td class=\"hidden-sm-down\">\n              <a href=\"#\">{{person.description}}</a>\n            </td>\n            <td class=\"hidden-sm-down\">{{person.date}}</td>\n            <td class=\"width-150\">\n              <div class=\"progress  bg-blue-light\">\n                <div class=\"progress-bar progress-sm bg-{{person.status.type}}\" role=\"progressbar\" [ngStyle]=\"{'width': person.status.progress + '%'}\"\n                  [attr.aria-valuenow]=\"person.status.progress\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n              </div>\n            </td>\n          </tr>\n          <tr *ngIf=\"(mf.data | SearchPipe : searchText).length === 0\">\n            <td colspan=\"100\">\n              No matches\n            </td>\n          </tr>\n        </tbody>\n        <tfoot>\n          <tr>\n            <td colspan=\"12\">\n              <mfBootstrapPaginator [rowsOnPageSet]=\"[10, 25, 50, 100]\"></mfBootstrapPaginator>\n            </td>\n          </tr>\n        </tfoot>\n      </table>\n    </div>\n  </div>\n</section>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/player-matches/player-matches.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/player-matches/player-matches.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlayerMatchesComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var PEOPLE = [
-    {
-        'id': '1',
-        'name': 'Algerd',
-        'info': {
-            'type': 'JPEG',
-            'dimensions': '200x150'
-        },
-        'description': 'Palo Alto',
-        'date': 'June 27, 2013',
-        'status': {
-            'progress': '29',
-            'type': 'success'
-        }
-    },
-    {
-        'id': '2',
-        'name': 'Vitaut',
-        'info': {
-            'type': 'PNG',
-            'dimensions': '6433x4522'
-        },
-        'description': 'Vilnia',
-        'date': 'January 1, 1442',
-        'status': {
-            'progress': '19',
-            'type': 'danger'
-        }
-    },
-    {
-        'id': '3',
-        'name': 'Honar',
-        'info': {
-            'type': 'AVI',
-            'dimensions': '1440x980'
-        },
-        'description': 'Berlin',
-        'date': 'August 6, 2013',
-        'status': {
-            'progress': '49',
-            'type': 'bar-gray-light'
-        }
-    },
-    {
-        'id': '4',
-        'name': 'Jack',
-        'info': {
-            'type': 'PNG',
-            'dimensions': '12x43'
-        },
-        'description': 'San Francisco',
-        'date': 'August 19, 2013',
-        'status': {
-            'progress': '69'
-        }
-    },
-    {
-        'id': '5',
-        'name': 'Leon',
-        'info': {
-            'type': 'MP4',
-            'dimensions': '800x480'
-        },
-        'description': 'Brasilia',
-        'date': 'October 1, 2013',
-        'status': {
-            'progress': '9',
-            'type': 'bar-gray-light'
-        }
-    },
-    {
-        'id': '6',
-        'name': 'Max',
-        'info': {
-            'type': 'TXT',
-            'dimensions': '-'
-        },
-        'description': 'Helsinki',
-        'date': 'October 29, 2013',
-        'status': {
-            'progress': '38',
-            'type': 'warning'
-        }
-    },
-    {
-        'id': '7',
-        'name': 'Pol',
-        'info': {
-            'type': 'MOV',
-            'dimensions': '640x480'
-        },
-        'description': 'Radashkovichi',
-        'date': 'November 11, 2013',
-        'status': {
-            'progress': '83',
-            'type': 'danger'
-        }
-    },
-    {
-        'id': '8',
-        'name': 'Chrishna',
-        'info': {
-            'type': 'DOC',
-            'dimensions': '-'
-        },
-        'description': 'Mumbai',
-        'date': 'December 2, 2013',
-        'status': {
-            'progress': '40',
-            'type': 'info'
-        }
-    },
-    {
-        'id': '9',
-        'name': 'Leslie',
-        'info': {
-            'type': 'AVI',
-            'dimensions': '4820x2140'
-        },
-        'description': 'Singapore',
-        'date': 'December 6, 2013',
-        'status': {
-            'progress': '18',
-            'type': 'warning'
-        }
-    },
-    {
-        'id': '10',
-        'name': 'David',
-        'info': {
-            'type': 'XML',
-            'dimensions': '-'
-        },
-        'description': 'Portland',
-        'date': 'December 13, 2013',
-        'status': {
-            'progress': '54',
-            'type': 'bar-gray-light'
-        }
-    },
-    {
-        'id': '11',
-        'name': 'Andrej',
-        'info': {
-            'type': 'VOB',
-            'dimensions': '6433x4522'
-        },
-        'description': 'Minsk',
-        'date': 'December 14, 2013',
-        'status': {
-            'progress': '25'
-        }
-    },
-    {
-        'id': '12',
-        'name': 'Julia',
-        'info': {
-            'type': 'JPEG',
-            'dimensions': '40x40'
-        },
-        'description': 'Hrodna',
-        'date': 'July 9, 2012',
-        'status': {
-            'progress': '50',
-            'type': 'warning'
-        }
-    },
-    {
-        'id': '13',
-        'name': 'Ihnat',
-        'info': {
-            'type': 'JAVA',
-            'dimensions': '-'
-        },
-        'description': 'Los Angeles',
-        'date': 'August 2, 2012',
-        'status': {
-            'progress': '8',
-            'type': 'success'
-        }
-    },
-    {
-        'id': '14',
-        'name': 'Abraham',
-        'info': {
-            'type': 'DOCX',
-            'dimensions': '-'
-        },
-        'description': 'Panama',
-        'date': 'September 3, 2012',
-        'status': {
-            'progress': '80',
-            'type': 'bar-gray-light'
-        }
-    },
-    {
-        'id': '15',
-        'name': 'Tomas',
-        'info': {
-            'type': 'JPEG',
-            'dimensions': '1800x1420'
-        },
-        'description': 'Amsterdam',
-        'date': 'November 13, 2012',
-        'status': {
-            'progress': '10',
-            'type': 'bar-gray-light'
-        }
-    },
-    {
-        'id': '16',
-        'name': 'Scott',
-        'info': {
-            'type': 'PNG',
-            'dimensions': '240x460'
-        },
-        'description': 'Sluck',
-        'date': 'December 5, 2012',
-        'status': {
-            'progress': '93'
-        }
-    },
-    {
-        'id': '17',
-        'name': 'Pham',
-        'info': {
-            'type': 'MAIL',
-            'dimensions': '-'
-        },
-        'description': 'Tokyo',
-        'date': 'December 8, 2012',
-        'status': {
-            'progress': '44',
-            'type': 'danger'
-        }
-    },
-    {
-        'id': '18',
-        'name': 'Peter',
-        'info': {
-            'type': 'PNG',
-            'dimensions': '8320x6400'
-        },
-        'description': 'Cape Town',
-        'date': 'December 29, 2012',
-        'status': {
-            'progress': '5',
-            'type': 'bar-gray-light'
-        }
-    },
-    {
-        'id': '19',
-        'name': 'Uladz',
-        'info': {
-            'type': 'JPEG',
-            'dimensions': '2200x1600'
-        },
-        'description': 'Mahileu',
-        'date': 'December 7, 2013',
-        'status': {
-            'progress': '0',
-            'type': 'gray-light'
-        }
-    }
-];
-var PlayerMatchesComponent = /** @class */ (function () {
-    function PlayerMatchesComponent() {
-        this.data = PEOPLE;
-    }
-    PlayerMatchesComponent.prototype.ngOnInit = function () {
-    };
-    PlayerMatchesComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-player-matches',
-            template: __webpack_require__("../../../../../src/app/player-matches/player-matches.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/player-matches/player-matches.component.scss")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], PlayerMatchesComponent);
-    return PlayerMatchesComponent;
 }());
 
 

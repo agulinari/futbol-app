@@ -9,7 +9,6 @@ import { ChartsModule } from 'ng2-charts';
 import { DataTableModule } from 'angular2-datatable';
 import { SearchPipe } from './search-pipe.pipe';
 import { PlayerDetailStatsComponent } from './player-detail-stats/player-detail-stats.component';
-import { PlayerMatchesComponent } from './player-matches/player-matches.component';
 import { PlayerMatchesStatsComponent } from './player-matches-stats/player-matches-stats.component';
 import { MatchDetailComponent } from './match-detail/match-detail.component';
 import { MatchDetailStatsComponent } from './match-detail-stats/match-detail-stats.component';
@@ -30,7 +29,6 @@ import { HttpClientModule } from '@angular/common/http';
     PlayerDetailComponent,
     SearchPipe,
     PlayerDetailStatsComponent,
-    PlayerMatchesComponent,
     PlayerMatchesStatsComponent,
     MatchDetailComponent,
     MatchDetailStatsComponent,

@@ -160,7 +160,7 @@ exports.stats = function (req, res) {
             stats.defense = 50;
             stats.physique = 50;
             stats.impact = 50;
-            results.push(row);
+            results.push(stats);
         });
         // After all data is returned, close connection and return results
         query.on('end', () => {

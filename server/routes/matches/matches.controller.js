@@ -79,8 +79,22 @@ exports.index = function(req, res) {
         const query = client.query(new Query(querymatches));
         // Stream results back one row at a time
         query.on('row', (row) => {
-            console.log(row);
-            results.push(row);
+            let match = {};
+            let team1 = {};
+            let team2 = {};
+            match.id = row.match_id;
+            match.date = row.match_date;
+            match.place = row.place;
+            match.tournament = row.tournament;
+            team1.name = row.team1;
+            team1.photo = row.team1_photo;
+            team1.goals = row.team1_goals;
+            team2.name = row.team2;
+            team2.photo = row.team2_photo;
+            team2.goals = row.team2_goals;
+            match.team1 = team1;
+            match.team2 = team2;
+            results.push(match);
         });
         // After all data is returned, close connection and return results
         query.on('end', () => {

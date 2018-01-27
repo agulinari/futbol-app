@@ -1,4 +1,9 @@
+const { Pool, Client, Query } = require('pg')
+const connectionString = process.env.DATABASE_URL
 
+const pool = new Pool({
+    connectionString: connectionString,
+});
 
 
 const MATCHES = [

@@ -999,10 +999,10 @@ var PlayerMatchesStatsComponent = /** @class */ (function () {
         this.route = route;
         // lineChart
         this.lineChartData = [
-            { data: [65, 59, 80, 81, 56, 55, 40], label: 'Puntaje' },
-            { data: [28, 48, 40, 19, 86, 27, 90], label: 'Goles' }
+            { data: [], label: 'Puntaje' },
+            { data: [], label: 'Goles' }
         ];
-        this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+        this.lineChartLabels = [];
         this.lineChartOptions = {
             responsive: true
         };

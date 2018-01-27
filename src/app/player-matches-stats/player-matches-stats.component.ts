@@ -14,10 +14,10 @@ export class PlayerMatchesStatsComponent implements OnInit {
 
   // lineChart
   public lineChartData: Array<any> = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Puntaje' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Goles' }
+    { data: [], label: 'Puntaje' },
+    { data: [], label: 'Goles' }
   ];
-  public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChartLabels: Array<any> = [];
   public lineChartOptions: any = {
     responsive: true
   };

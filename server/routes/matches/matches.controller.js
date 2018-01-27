@@ -110,9 +110,9 @@ exports.show = function(req, res) {
     
     const id = req.params.id;
 
-    const querymatches = 'SELECT m.match_id, m.match_date, m.place, m.tournament, m.team1, m.team1_photo, t1.goals, t2.shoots, t2.fouls, t2.assists, m.team2, m.team2_photo, t2.goals, '
-    + 't2.goals, t2.shoots, t2.fouls, t2.assists, chamigo.player_id, chamigo.player_photo, chamigo.nickname, chenemigo.player_id, chenemigo.player_photo, chenemigo.nickname, '
-    + 'goleador.player_id, goleador.player_photo, goleador.nickname, terminator.player_id, terminator.player_photo, terminator.nickname, m.summary_title, m.summary_body '
+    const querymatches = 'SELECT m.match_id, m.match_date, m.place, m.tournament, m.team1, m.team1_photo, t1.goals as team1_goals, t1.shoots as team1_shoots, t1.fouls as team1_fouls, t1.assists as team1_assists, m.team2, m.team2_photo, t2.goals as team2_goals, '
+    + 't2.shoots as team2_shoots, t2.fouls as team2_fouls, t2.assists as team2_assists, chamigo.player_id as chamigo_id, chamigo.player_photo as chamigo_photo, chamigo.nickname as chamigo_name, chenemigo.player_id as chenemigo_id, chenemigo.player_photo as chenemigo_photo, chenemigo.nickname as chenemigo_name, '
+    + 'goleador.player_id as goleador_id, goleador.player_photo as goleador_photo, goleador.nickname as goleador_name, terminator.player_id as terminator_id, terminator.player_photo as terminator_photo, terminator.nickname as terminator_name, m.summary_title, m.summary_body '
     +' FROM matches m, '
     +'(SELECT mat.match_id, SUM(s.goals) as goals, SUM(s.assists) as assists, SUM(s.fouls) as fouls, SUM(s.shoots) as shoots '
     +'from matches mat,stats s where team = mat.team1 group by mat.match_id having mat.match_id = '+id+' ) t1, '
@@ -141,8 +141,52 @@ exports.show = function(req, res) {
         const query = client.query(new Query(querymatches));
         // Stream results back one row at a time
         query.on('row', (row) => {
-            console.log(row);
-            results.push(row);
+            let match = {};
+            let team1 = {};
+            let team2 = {};
+            let awards = {};
+            let chamigo = {};
+            let chenemigo = {};
+            let goleador = {};
+            let terminator = {};
+            let summary = {};
+            match.id = row.match_id;
+            match.date = row.match_date;
+            match.place = row.place;
+            summary.title = row.summary_title;
+            summary.body = row.summary_body;
+            match.tournament = row.tournament;
+            team1.name = row.team1;
+            team1.photo = row.team1_photo;
+            team1.goals = row.team1_goals;
+            team1.shoots = row.team1_shoots;
+            team1.assists = row.team1_assists;
+            team2.name = row.team2;
+            team2.photo = row.team2_photo;
+            team2.goals = row.team2_goals;
+            team2.shoots = row.team2_shoots;
+            team2.assists = row.team2_assists;
+            chamigo.idplayer = row.chamigo_id; 
+            chamigo.name = row.chamigo_name;
+            chamigo.photo = row.chamigo_photo;
+            chenemigo.idplayer = row.chenemigo_id; 
+            chenemigo.name = row.chenemigo_name;
+            chenemigo.photo = row.chenemigo_photo;
+            goleador.idplayer = row.goleador_id; 
+            goleador.name = row.goleador_name;
+            goleador.photo = row.goleador_photo;
+            terminator.idplayer = row.terminator_id; 
+            terminator.name = row.terminator_name;
+            terminator.photo = row.terminator_photo;
+            awards.chamigo = chamigo;
+            awards.chenemigo = chenemigo;
+            awards.goleador = goleador;
+            awards.terminator = terminator;
+            match.team1 = team1;
+            match.team2 = team2;
+            match.awards = awards;
+            match.summary = summary;
+            results.push(match);
         });
         // After all data is returned, close connection and return results
         query.on('end', () => {

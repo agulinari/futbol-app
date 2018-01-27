@@ -86,7 +86,6 @@ exports.index = function(req, res) {
 };
 
 
-};
 // Get a single match
 exports.show = function(req, res) {
     

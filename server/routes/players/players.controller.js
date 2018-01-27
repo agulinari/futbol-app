@@ -5,80 +5,6 @@ const pool = new Pool({
     connectionString: connectionString,
 });
 
-const STATS = [
-    {
-        'id': 1,
-        'attack': 70,
-        'defense': 40,
-        'vision': 20,
-        'impact': 50,
-        'physique': 55,
-        'goals': 2,
-        'assists': 4,
-        'fouls': 3,
-        'matches': 12
-    },
-    {
-        'id': 2,
-        'attack': 80,
-        'defense': 50,
-        'vision': 10,
-        'impact': 60,
-        'physique': 75,
-        'goals': 7,
-        'assists': 2,
-        'fouls': 8,
-        'matches': 11
-    },
-    {
-        'id': 3,
-        'attack': 30,
-        'defense': 90,
-        'vision': 60,
-        'impact': 60,
-        'physique': 85,
-        'goals': 1,
-        'assists': 7,
-        'fouls': 8,
-        'matches': 10
-    },
-    {
-        'id': 4,
-        'attack': 40,
-        'defense': 40,
-        'vision': 80,
-        'impact': 50,
-        'physique': 25,
-        'goals': 6,
-        'assists': 2,
-        'fouls': 7,
-        'matches': 11
-    },
-    {
-        'id': 5,
-        'attack': 40,
-        'defense': 40,
-        'vision': 80,
-        'impact': 70,
-        'physique': 25,
-        'goals': 7,
-        'assists': 1,
-        'fouls': 8,
-        'matches': 10
-    },
-    {
-        'id': 6,
-        'attack': 20,
-        'defense': 90,
-        'vision': 10,
-        'impact': 60,
-        'physique': 45,
-        'goals': 1,
-        'assists': 1,
-        'fouls': 5,
-        'matches': 10
-    }
-];
 
 // Get list of players
 exports.index = function (req, res) {
@@ -160,7 +86,7 @@ exports.stats = function (req, res) {
             stats.defense = 50;
             stats.physique = 50;
             stats.impact = 50;
-            results.push(stats);
+            results.push(stats[0]);
         });
         // After all data is returned, close connection and return results
         query.on('end', () => {

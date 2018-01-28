@@ -532,67 +532,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var MATCHES = [
-    {
-        'id': 1,
-        'date': 'Enero 22, 2018',
-        'place': 'Pergamino',
-        'tournament': 'Pato Capitan',
-        'team1': {
-            'name': 'Los Amigos de Pato',
-            'photo': 'assets/img/1.png',
-            'goals': 4,
-            'shoots': 11,
-            'fouls': 7,
-            'possession': 56
-        },
-        'team2': {
-            'name': 'Los Amigos de Guille',
-            'photo': 'assets/img/2.png',
-            'goals': 3,
-            'shoots': 9,
-            'fouls': 8,
-            'possession': 44
-        },
-        'awards': {
-            'chamigo': {
-                'idplayer': 1,
-                'photo': 'assets/img/3.png',
-                'name': 'Pato'
-            },
-            'chenemigo': {
-                'idplayer': 2,
-                'photo': 'assets/img/1.png',
-                'name': 'Guille'
-            },
-            'goleador': {
-                'idplayer': 3,
-                'photo': 'assets/img/13.png',
-                'name': 'Picci'
-            },
-            'terminator': {
-                'idplayer': 4,
-                'photo': 'assets/img/14.png',
-                'name': 'El Lina'
-            }
-        },
-        'summary': {
-            'title': 'Siempre hay revancha',
-            'body': 'En otra calurosa noche, comienza el torneo "Empanadas Revancha 2018".'
-        }
-    }
-];
 var MatchService = /** @class */ (function () {
     function MatchService(http) {
         this.http = http;
         this.matchesUrl = 'api/matches';
     }
     MatchService.prototype.getMatches = function (player) {
-        // return of(MATCHES);
-        return this.http.get(this.matchesUrl).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError('getMatches', [])));
+        var params = new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpParams */]().set('player', player);
+        return this.http.get(this.matchesUrl, { params: params }).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError('getMatches', [])));
     };
     MatchService.prototype.getMatch = function (id) {
-        // return of(MATCHES[--id]);
         var url = this.matchesUrl + "/" + id;
         return this.http.get(url).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError("getMatch id=" + id)));
     };
@@ -1097,214 +1046,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var PLAYERS = [
-    {
-        'id': 1,
-        'photo': 'assets/img/3.png',
-        'nickname': 'Pato',
-        'firstname': 'Alejandro',
-        'lastname': 'Sanchez',
-        'dateofbirth': 'June 27, 2013',
-        'position': 'Delantero',
-        'height': 175,
-        'weight': 75
-    },
-    {
-        'id': 2,
-        'photo': 'assets/img/2.png',
-        'nickname': 'Guille',
-        'firstname': 'Guillermo',
-        'lastname': 'Maqueira',
-        'dateofbirth': 'June 27, 2013',
-        'position': 'Delantero',
-        'height': 175,
-        'weight': 75
-    },
-    {
-        'id': 3,
-        'photo': 'assets/img/1.png',
-        'nickname': 'Picci',
-        'firstname': 'Luis Emilio',
-        'lastname': 'Piccinali',
-        'dateofbirth': 'June 27, 2013',
-        'position': 'Arquero',
-        'height': 175,
-        'weight': 75
-    },
-    {
-        'id': 4,
-        'photo': 'assets/img/13.png',
-        'nickname': 'El Lina',
-        'firstname': 'Agustin',
-        'lastname': 'Linari',
-        'dateofbirth': 'June 27, 2013',
-        'position': 'Delantero',
-        'height': 175,
-        'weight': 75
-    },
-    {
-        'id': 5,
-        'photo': 'assets/img/14.png',
-        'nickname': 'El Negro',
-        'firstname': 'Juan Martin',
-        'lastname': 'Criniti',
-        'dateofbirth': 'June 27, 2013',
-        'position': 'Defensor',
-        'height': 175,
-        'weight': 75
-    },
-    {
-        'id': 6,
-        'photo': 'assets/img/1.png',
-        'nickname': 'Marianito',
-        'firstname': 'Mariano',
-        'lastname': 'Giacoletto',
-        'dateofbirth': 'June 27, 2013',
-        'position': 'Volante',
-        'height': 175,
-        'weight': 75
-    }
-];
-var STATS = [
-    {
-        'id': 1,
-        'attack': 70,
-        'defense': 40,
-        'vision': 20,
-        'impact': 50,
-        'physique': 55,
-        'goals': 2,
-        'assists': 4,
-        'fouls': 3,
-        'matches': 12
-    },
-    {
-        'id': 2,
-        'attack': 80,
-        'defense': 50,
-        'vision': 10,
-        'impact': 60,
-        'physique': 75,
-        'goals': 7,
-        'assists': 2,
-        'fouls': 8,
-        'matches': 11
-    },
-    {
-        'id': 3,
-        'attack': 30,
-        'defense': 90,
-        'vision': 60,
-        'impact': 60,
-        'physique': 85,
-        'goals': 1,
-        'assists': 7,
-        'fouls': 8,
-        'matches': 10
-    },
-    {
-        'id': 4,
-        'attack': 40,
-        'defense': 40,
-        'vision': 80,
-        'impact': 50,
-        'physique': 25,
-        'goals': 6,
-        'assists': 2,
-        'fouls': 7,
-        'matches': 11
-    },
-    {
-        'id': 5,
-        'attack': 40,
-        'defense': 40,
-        'vision': 80,
-        'impact': 70,
-        'physique': 25,
-        'goals': 7,
-        'assists': 1,
-        'fouls': 8,
-        'matches': 10
-    },
-    {
-        'id': 6,
-        'attack': 20,
-        'defense': 90,
-        'vision': 10,
-        'impact': 60,
-        'physique': 45,
-        'goals': 1,
-        'assists': 1,
-        'fouls': 5,
-        'matches': 10
-    }
-];
-var EVOLUTION = [
-    {
-        'id': 1,
-        'score': 7,
-        'goals': 3,
-        'matchdate': '02/01/2018'
-    },
-    {
-        'id': 2,
-        'score': 9,
-        'goals': 6,
-        'matchdate': '03/01/2018'
-    },
-    {
-        'id': 3,
-        'score': 2,
-        'goals': 0,
-        'matchdate': '04/01/2018'
-    },
-    {
-        'id': 4,
-        'score': 8,
-        'goals': 2,
-        'matchdate': '05/01/2018'
-    },
-    {
-        'id': 5,
-        'score': 5,
-        'goals': 1,
-        'matchdate': '06/01/2018'
-    },
-    {
-        'id': 6,
-        'score': 9,
-        'goals': 6,
-        'matchdate': '07/01/2018'
-    },
-    {
-        'id': 7,
-        'score': 6,
-        'goals': 3,
-        'matchdate': '08/01/2018'
-    }
-];
 var PlayerService = /** @class */ (function () {
     function PlayerService(http) {
         this.http = http;
         this.playersUrl = 'api/players';
     }
     PlayerService.prototype.getPlayers = function () {
-        // return of(PLAYERS);
         return this.http.get(this.playersUrl)
             .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError('getPlayers', [])));
     };
     PlayerService.prototype.getPlayer = function (id) {
-        // return of(PLAYERS[--id]);
         var url = this.playersUrl + "/" + id;
         return this.http.get(url).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError("getPlayer id=" + id)));
     };
     PlayerService.prototype.getStats = function (id) {
-        // return of(STATS[--id]);
         var url = this.playersUrl + "/" + id + "/stats";
         return this.http.get(url).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError("getStats id=" + id)));
     };
     PlayerService.prototype.getEvolution = function (id) {
-        // return of(EVOLUTION);
         var url = this.playersUrl + "/" + id + "/evolution";
         return this.http.get(url).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError("getEvolution id=" + id)));
     };

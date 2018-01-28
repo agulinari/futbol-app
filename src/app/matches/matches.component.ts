@@ -15,15 +15,20 @@ export class MatchesComponent implements OnInit {
 
   @Input() player: string;
 
-  constructor(private matchService: MatchService,  private router: Router) { }
+  constructor(private matchService: MatchService, private router: Router) { }
 
   ngOnInit() {
     this.getMatches();
   }
 
   getMatches(): void {
-    this.matchService.getMatches(this.player)
+    if (this.player === undefined) {
+      this.matchService.getMatches()
         .subscribe(matches => this.matches = matches);
+    } else {
+      this.matchService.getMatchesByPlayer(this.player)
+        .subscribe(matches => this.matches = matches);
+    }
   }
 
   onSelect(match: Match): void {

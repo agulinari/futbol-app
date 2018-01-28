@@ -12,7 +12,13 @@ export class MatchService {
 
     constructor(private http: HttpClient) { }
 
-    getMatches(player: string): Observable<Match[]> {
+    getMatches(): Observable<Match[]> {
+        return this.http.get<Match[]>(this.matchesUrl).pipe(
+            catchError(this.handleError('getMatches', []))
+        );
+    }
+
+    getMatchesByPlayer(player: string): Observable<Match[]> {
         const params = new HttpParams().set('player', player);
         return this.http.get<Match[]>(this.matchesUrl, {params: params}).pipe(
             catchError(this.handleError('getMatches', []))

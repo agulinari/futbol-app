@@ -537,7 +537,10 @@ var MatchService = /** @class */ (function () {
         this.http = http;
         this.matchesUrl = 'api/matches';
     }
-    MatchService.prototype.getMatches = function (player) {
+    MatchService.prototype.getMatches = function () {
+        return this.http.get(this.matchesUrl).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError('getMatches', [])));
+    };
+    MatchService.prototype.getMatchesByPlayer = function (player) {
         var params = new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpParams */]().set('player', player);
         return this.http.get(this.matchesUrl, { params: params }).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError('getMatches', [])));
     };
@@ -626,8 +629,14 @@ var MatchesComponent = /** @class */ (function () {
     };
     MatchesComponent.prototype.getMatches = function () {
         var _this = this;
-        this.matchService.getMatches(this.player)
-            .subscribe(function (matches) { return _this.matches = matches; });
+        if (this.player === undefined) {
+            this.matchService.getMatches()
+                .subscribe(function (matches) { return _this.matches = matches; });
+        }
+        else {
+            this.matchService.getMatchesByPlayer(this.player)
+                .subscribe(function (matches) { return _this.matches = matches; });
+        }
     };
     MatchesComponent.prototype.onSelect = function (match) {
         this.router.navigate(['/match/' + match.id]);

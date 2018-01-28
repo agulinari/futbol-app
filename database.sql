@@ -57,9 +57,22 @@ INSERT INTO players (nickname, first_name, last_name, player_height, player_weig
     VALUES ('Alan', 'Alan', 'Heilwel', 190, 80, 'assets/img/14.png', 'Arquero', '1982-01-01');
 INSERT INTO players (nickname, first_name, last_name, player_height, player_weight, player_photo, player_position, birth_date)
     VALUES ('Acu', 'Acu', 'Salamo', 185, 75, 'assets/img/1.png', 'Delantero', '1992-09-17');
+INSERT INTO players (nickname, first_name, last_name, player_height, player_weight, player_photo, player_position, birth_date)
+    VALUES ('Picci', 'Luis Emilio', 'Piccinali', 175, 70, 'assets/img/14.png', 'Arquero', '1983-05-16');
+INSERT INTO players (nickname, first_name, last_name, player_height, player_weight, player_photo, player_position, birth_date)
+    VALUES ('Quique', 'Quique', 'Quique', 173, 78, 'assets/img/1.png', 'Defensor', '1978-01-01');
+INSERT INTO players (nickname, first_name, last_name, player_height, player_weight, player_photo, player_position, birth_date)
+    VALUES ('Gonza', 'Gonzalo', 'Sanroma', 180, 78, 'assets/img/1.png', 'Defensor', '1982-10-13');
+INSERT INTO players (nickname, first_name, last_name, player_height, player_weight, player_photo, player_position, birth_date)
+    VALUES ('Max', 'Maximiliano', 'Gattas', 178, 85, 'assets/img/1.png', 'Defensor', '1982-10-13');
+
 
 INSERT INTO matches (match_date, place, tournament, team1, team2, team1_photo, team2_photo, summary_title, summary_body)
     VALUES ('2018-01-24', 'Pedernera', 'Empanadas Revancha 2018', 'Los Amigos de Pato', 'Los Amigos de Guille', 'assets/img/2.png', 'assets/img/13.png', 'Ningunos Piccis', '');
+INSERT INTO matches (match_date, place, tournament, team1, team2, team1_photo, team2_photo, summary_title, summary_body)
+    VALUES ('2018-01-18', 'Pedernera', 'Empanadas Revancha 2018', 'Los Amigos de Pato', 'Los Amigos de Guille', 'assets/img/2.png', 'assets/img/13.png', 'El gráfico', '');
+
+
 
 INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
     VALUES (1, 1, 'Los Amigos de Pato', 'Delantero', 3, 6, 1, 1, 6);
@@ -81,3 +94,24 @@ INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, as
     VALUES (9, 1, 'Los Amigos de Guille', 'Arquero', 0, 0, 0, 0, 7);
 INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
     VALUES (10, 1, 'Los Amigos de Guille', 'Delantero', 3, 5, 3, 2, 6);
+
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (1, 2, 'Los Amigos de Pato', 'Delantero', 3, 6, 1, 1, 2);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (2, 2, 'Los Amigos de Pato', 'Delantero', 0, 5, 1, 1, 2);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (3, 2, 'Los Amigos de Pato', 'Volante', 4, 6, 1, 1, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (4, 2, 'Los Amigos de Pato', 'Defensor', 2, 4, 1, 1, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (11, 2, 'Los Amigos de Pato', 'Arquero', 0, 0, 0, 0, 6);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (8, 2, 'Los Amigos de Guille', 'Volante', 3, 5, 1, 1, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (7, 2, 'Los Amigos de Guille', 'Volante', 3, 6, 0, 4, 8);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (12, 2, 'Los Amigos de Guille', 'Defensor', 1, 6, 1, 1, 9);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (5, 2, 'Los Amigos de Guille', 'Delantero', 2, 0, 0, 0, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (14, 2, 'Los Amigos de Guille', 'Arquero', 3, 5, 3, 2, 7);

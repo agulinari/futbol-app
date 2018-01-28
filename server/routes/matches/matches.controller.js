@@ -9,7 +9,7 @@ const pool = new Pool({
 exports.index = function(req, res) {
 
     let querymatches;
-    if (Object.keys(req.query).length === 0){
+    if (req.query.player === undefined){
         querymatches = 'select m.match_id, m.match_date, m.place, m.tournament, m.team1, m.team1_photo, ' 
         + '(select sum(s.goals) from stats s where s.match_id = m.match_id and s.team = m.team1) team1_goals, '
         + 'm.team2, m.team2_photo, '

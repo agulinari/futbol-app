@@ -21,7 +21,7 @@ exports.index = function(req, res) {
         + '(select sum(s.goals) from stats s where s.match_id = m.match_id and s.team = m.team2) team2_goals '
         + 'from matches m, stats s '
         + 'where s.match_id = m.match_id '
-        + 'and s.player_id = '+player;
+        + 'and s.player_id = '+playerid;
     };
 
     const results = [];

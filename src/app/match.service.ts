@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { Match } from './model/match';
+import { MatchSummary } from './model/match-summary';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -30,6 +31,14 @@ export class MatchService {
         return this.http.get<Match>(url).pipe(
             catchError(this.handleError<Match>(`getMatch id=${id}`))
         );
+    }
+
+    getSummary(id: number): Observable<MatchSummary> {
+        const url = `${this.matchesUrl}/${id}/summary`;
+        return this.http.get<MatchSummary>(url).pipe(
+            catchError(this.handleError<MatchSummary>(`getSummary id=${id}`))
+        );
+
     }
 
     /**

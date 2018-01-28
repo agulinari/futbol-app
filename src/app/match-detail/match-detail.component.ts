@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MatchDetailComponent implements OnInit {
 
-  match: Match;
+  private match: Match;
 
   constructor(private matchService: MatchService, private route: ActivatedRoute) { }
 

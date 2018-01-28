@@ -41,8 +41,4 @@ export class Match {
             name: string;
         };
     };
-    summary: {
-        title: string;
-        body: string;
-    };
 }

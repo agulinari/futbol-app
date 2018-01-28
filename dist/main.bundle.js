@@ -452,7 +452,7 @@ var MatchFormComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/match-summary/match-summary.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section widget class=\"widget\">\n  <header>\n    <h4>\n      21/01/2018\n    </h4>\n  </header>\n  <div class=\"widget-body\">\n    <h2>Siempre hay revancha</h2>\n    <p>En otra calurosa noche, comienza el torneo \"Empanadas Revancha 2018\". Nuevamente se presenta un empate como en aquellos inicios de Febrero del año pasado. Para este torneo, se compran los derechos de los nombres \"Los amigos de Ronaldo vs los amigos de Zidane\" y se adoptan \"Los amigos de Guille vs Los amigos de Pato\". El partido, muy parejo. Lina en la previa de su cumpleaños, se vuelca a la bebida y logra otro desconcierto en cancha, él mismo lo reconoce en cada instante. Hubo minutos para refrescarse, y se destacó el codazo de Quique a Pato quien dio varias vuelta en el piso para demostrar la falta (a lo Guille Barros Schelotto). A pesar de ser goleador, Pablito no recibió el premio Terminator. Este metió un cañonazo para sellar el empate, después de ir 2 abajo gran parte del partido.</p>\n    <p>Juan encendio una alarma en el vestuario de los amigos de pato, acuso a lina y pato de \"no querer ganar\" y recibio bulliyng de quique por pasarsela a pato en multiples ocasiones bajo los tres postes, mientras lina se arrastraba por la cancha. Picci propuso ¨capturar\" al lina a la salida de su laburo para que no caiga en las garras de su dealer de alcohol pre-competicion: pablo. El partido pareció un amistoso de verano donde nadie volvio en forma despues de las fiestas. Por su parte guille tribuneo bastante aunque no pudo conseguir el deseado gol para q su jermu lo capture con el celular... a cambio consiguio recibir varios caños. Aunque si de caños hablamos, Gonza le hizo uno a Pato q va a quedar para el recuerdo, la gente q lo vio de cerca dice q Gonza esbozo una sonrisa mientras pato pasaba como colectivo lleno con la pelota entre las piernas. Marianito recien llegado de la costa dio indicaciones los ultimos 15 minutos, mientras pensaba a quien limipar del equipo para q jueguen gabi y el. Se propuso que guille juegue los ultimos 15 de cada partido...no hay respeto por el capitan. Lina brindo por su cumple pasadas las doce...con agua, dice q el alcohol solo lo toma antes de jugar. Mientras tanto gabi esta como tevez, haciendo papelones en china y viendo como volver para pelear por un lugar en el equipo. Picci recibio otro pelotazo, por suerte arranco bien el año y no fue en las bolas. Pato almorzo.</p>\n  </div>\n</section>"
+module.exports = "<div *ngIf=\"summary\">\n<section widget class=\"widget\">\n  <header>\n    <h4>\n      {{sumary.date}}\n    </h4>\n  </header>\n  <div class=\"widget-body\">\n    <h2>{{summary.title}}</h2>\n    <p>{{sumary.body}}</p>\n  </div>\n</section>\n</div>"
 
 /***/ }),
 
@@ -480,6 +480,8 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MatchSummaryComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__match_service__ = __webpack_require__("../../../../../src/app/match.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -490,10 +492,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var MatchSummaryComponent = /** @class */ (function () {
-    function MatchSummaryComponent() {
+    function MatchSummaryComponent(matchService, route) {
+        this.matchService = matchService;
+        this.route = route;
     }
     MatchSummaryComponent.prototype.ngOnInit = function () {
+        this.getSummary();
+    };
+    MatchSummaryComponent.prototype.getSummary = function () {
+        var _this = this;
+        var id = +this.route.snapshot.paramMap.get('id');
+        this.matchService.getSummary(id)
+            .subscribe(function (summary) { return _this.summary = summary; });
     };
     MatchSummaryComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -501,7 +514,7 @@ var MatchSummaryComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/match-summary/match-summary.component.html"),
             styles: [__webpack_require__("../../../../../src/app/match-summary/match-summary.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__match_service__["a" /* MatchService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]])
     ], MatchSummaryComponent);
     return MatchSummaryComponent;
 }());
@@ -547,6 +560,10 @@ var MatchService = /** @class */ (function () {
     MatchService.prototype.getMatch = function (id) {
         var url = this.matchesUrl + "/" + id;
         return this.http.get(url).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError("getMatch id=" + id)));
+    };
+    MatchService.prototype.getSummary = function (id) {
+        var url = this.matchesUrl + "/" + id + "/summary";
+        return this.http.get(url).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError("getSummary id=" + id)));
     };
     /**
  * Handle Http operation that failed.

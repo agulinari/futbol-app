@@ -452,7 +452,7 @@ var MatchFormComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/match-summary/match-summary.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"summary\">\n<section widget class=\"widget\">\n  <header>\n    <h4>\n      {{sumary.date}}\n    </h4>\n  </header>\n  <div class=\"widget-body\">\n    <h2>{{summary.title}}</h2>\n    <p>{{sumary.body}}</p>\n  </div>\n</section>\n</div>"
+module.exports = "<div *ngIf=\"summary\">\n<section widget class=\"widget\">\n  <header>\n    <h4>\n      {{summary.date}}\n    </h4>\n  </header>\n  <div class=\"widget-body\">\n    <h2>{{summary.title}}</h2>\n    <p>{{summary.body}}</p>\n  </div>\n</section>\n</div>"
 
 /***/ }),
 

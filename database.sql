@@ -65,12 +65,18 @@ INSERT INTO players (nickname, first_name, last_name, player_height, player_weig
     VALUES ('Gonza', 'Gonzalo', 'Sanroma', 180, 78, 'assets/img/1.png', 'Defensor', '1982-10-13');
 INSERT INTO players (nickname, first_name, last_name, player_height, player_weight, player_photo, player_position, birth_date)
     VALUES ('Max', 'Maximiliano', 'Gattas', 178, 85, 'assets/img/1.png', 'Defensor', '1982-10-13');
+INSERT INTO players (nickname, first_name, last_name, player_height, player_weight, player_photo, player_position, birth_date)
+    VALUES ('Brunito', 'Bruno', 'Lanzilotta', 173, 74, 'assets/img/1.png', 'Delantero', '1984-01-24');
 
 
 INSERT INTO matches (match_date, place, tournament, team1, team2, team1_photo, team2_photo, summary_title, summary_body)
     VALUES ('2018-01-24', 'Pedernera', 'Empanadas Revancha 2018', 'Los Amigos de Pato', 'Los Amigos de Guille', 'assets/img/2.png', 'assets/img/13.png', 'Ningunos Piccis', '');
 INSERT INTO matches (match_date, place, tournament, team1, team2, team1_photo, team2_photo, summary_title, summary_body)
-    VALUES ('2018-01-18', 'Pedernera', 'Empanadas Revancha 2018', 'Los Amigos de Pato', 'Los Amigos de Guille', 'assets/img/2.png', 'assets/img/13.png', 'El gráfico', '');
+    VALUES ('2018-01-18', 'Pedernera', 'Empanadas Revancha 2018', 'Los Amigos de Pato', 'Los Amigos de Guille', 'assets/img/2.png', 'assets/img/13.png', 'El Grafico', '');
+INSERT INTO matches (match_date, place, tournament, team1, team2, team1_photo, team2_photo, summary_title, summary_body)
+    VALUES ('2018-01-03', 'Pedernera', 'Empanadas Revancha 2018', 'Los Amigos de Pato', 'Los Amigos de Guille', 'assets/img/2.png', 'assets/img/13.png', 'Siempre hay revancha', '');
+INSERT INTO matches (match_date, place, tournament, team1, team2, team1_photo, team2_photo, summary_title, summary_body)
+    VALUES ('2018-01-10', 'Pedernera', 'Empanadas Revancha 2018', 'Los Amigos de Pato', 'Los Amigos de Guille', 'assets/img/2.png', 'assets/img/13.png', 'Pato al horno', '');
 
 
 
@@ -115,3 +121,66 @@ INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, as
     VALUES (5, 2, 'Los Amigos de Guille', 'Delantero', 2, 0, 0, 0, 7);
 INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
     VALUES (14, 2, 'Los Amigos de Guille', 'Arquero', 3, 5, 3, 2, 7);
+
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (1, 3, 'Los Amigos de Pato', 'Delantero', 2, 6, 1, 1, 2);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (2, 3, 'Los Amigos de Pato', 'Delantero', 0, 4, 1, 1, 4);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (3, 3, 'Los Amigos de Pato', 'Volante', 1, 3, 0, 1, 6);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (4, 3, 'Los Amigos de Pato', 'Defensor', 2, 4, 1, 2, 8);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (11, 3, 'Los Amigos de Pato', 'Arquero', 0, 0, 0, 0, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (5, 3, 'Los Amigos de Guille', 'Delantero', 1, 4, 0, 1, 6);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (12, 3, 'Los Amigos de Guille', 'Defensor', 0, 2, 3, 3, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (8, 3, 'Los Amigos de Guille', 'Volante', 3, 6, 0, 2, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (13, 3, 'Los Amigos de Guille', 'Defensor', 0, 2, 0, 2, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (14, 3, 'Los Amigos de Guille', 'Arquero', 1, 2, 1, 0, 7);
+
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (1, 3, 'Los Amigos de Pato', 'Delantero', 2, 6, 1, 1, 2);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (2, 3, 'Los Amigos de Pato', 'Delantero', 0, 4, 1, 1, 4);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (3, 3, 'Los Amigos de Pato', 'Volante', 1, 3, 0, 1, 6);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (4, 3, 'Los Amigos de Pato', 'Defensor', 2, 4, 1, 2, 8);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (11, 3, 'Los Amigos de Pato', 'Arquero', 0, 0, 0, 0, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (5, 3, 'Los Amigos de Guille', 'Delantero', 1, 4, 0, 1, 6);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (12, 3, 'Los Amigos de Guille', 'Defensor', 0, 2, 1, 3, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (8, 3, 'Los Amigos de Guille', 'Volante', 3, 6, 0, 2, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (13, 3, 'Los Amigos de Guille', 'Defensor', 0, 2, 0, 2, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (14, 3, 'Los Amigos de Guille', 'Arquero', 1, 2, 1, 0, 7);
+
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (15, 4, 'Los Amigos de Pato', 'Delantero', 2, 4, 1, 1, 6);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (2, 4, 'Los Amigos de Pato', 'Delantero', 0, 3, 1, 1, 3);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (3, 4, 'Los Amigos de Pato', 'Volante', 5, 3, 0, 1, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (4, 4, 'Los Amigos de Pato', 'Defensor', 1, 4, 1, 2, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (11, 4, 'Los Amigos de Pato', 'Arquero', 0, 0, 4, 0, 6);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (5, 4, 'Los Amigos de Guille', 'Delantero', 0, 3, 0, 1, 4);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (7, 4, 'Los Amigos de Guille', 'Volante', 5, 2, 0, 3, 7);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (8, 4, 'Los Amigos de Guille', 'Volante', 0, 3, 1, 2, 4);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (9, 4, 'Los Amigos de Guille', 'Arquero', 0, 0, 0, 0, 5);
+INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score)
+    VALUES (13, 4, 'Los Amigos de Guille', 'Defensor', 4, 2, 1, 0, 8);

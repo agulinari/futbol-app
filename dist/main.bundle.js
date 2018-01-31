@@ -66,7 +66,7 @@ var AppRoutingModule = /** @class */ (function () {
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>"
+module.exports = "<nav>\r\n    <a routerLink=\"/players\">Jugadores</a>\r\n    <a routerLink=\"/matches\">Partidos</a>\r\n</nav>\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -78,7 +78,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "nav a {\n  padding: 5px 10px;\n  text-decoration: none;\n  margin-top: 10px;\n  display: inline-block;\n  background-color: #eee;\n  border-radius: 4px; }\n\nnav a:visited, a:link {\n  color: #607D8B; }\n\nnav a:hover {\n  color: #039be5;\n  background-color: #CFD8DC; }\n\nnav a.active {\n  color: #039be5; }\n", ""]);
 
 // exports
 

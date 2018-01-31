@@ -10,19 +10,19 @@ exports.index = function(req, res) {
 
     let querymatches;
     if (Object.keys(req.query).length === 0){
-        querymatches = 'select m.match_id, m.match_date, m.place, m.tournament, m.team1, m.team1_photo, ' 
+        querymatches = 'select m.match_id, to_char(m.match_date,\'DD/MM/YYYY\') as match_date, m.place, m.tournament, m.team1, m.team1_photo, ' 
         + '(select sum(s.goals) from stats s where s.match_id = m.match_id and s.team = m.team1) team1_goals, '
         + 'm.team2, m.team2_photo, '
         + '(select sum(s.goals) from stats s where s.match_id = m.match_id and s.team = m.team2) team2_goals '
-        + 'from matches m';
+        + 'from matches m order by m.match_date desc';
     }else{
-        querymatches = 'select m.match_id, m.match_date, m.place, m.tournament, m.team1, m.team1_photo, '
+        querymatches = 'select m.match_id, to_char(m.match_date,\'DD/MM/YYYY\') as match_date, m.place, m.tournament, m.team1, m.team1_photo, '
         + '(select sum(s.goals) from stats s where s.match_id = m.match_id and s.team = m.team1) team1_goals, '
         + 'm.team2, m.team2_photo, '
         + '(select sum(s.goals) from stats s where s.match_id = m.match_id and s.team = m.team2) team2_goals '
         + 'from matches m, stats s '
         + 'where s.match_id = m.match_id '
-        + 'and s.player_id = '+req.query.player;
+        + 'and s.player_id = '+req.query.player+' order by m.match_date desc';
     }
 
     const results = [];

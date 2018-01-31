@@ -107,7 +107,7 @@ exports.evolution = function (req, res) {
             console.log(err);
             return res.status(500).json({ success: false, data: err });
         }
-        const querystring = 'SELECT s.match_id as id, s.score, s.goals, m.match_date as matchdate FROM stats s, matches m WHERE s.match_id = m.match_id AND s.player_id=' + id + ' ORDER BY m.match_date ASC;';
+        const querystring = 'SELECT s.match_id as id, s.score, s.goals, to_char(m.match_date,\'DD/MM/YYYY\') as matchdate FROM stats s, matches m WHERE s.match_id = m.match_id AND s.player_id=' + id + ' ORDER BY m.match_date ASC;';
         // SQL Query > Select Data
         const query = client.query(new Query(querystring));
         // Stream results back one row at a time

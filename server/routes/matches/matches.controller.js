@@ -68,7 +68,7 @@ exports.show = function(req, res) {
     
     const id = req.params.id;
 
-    const querymatches = 'SELECT m.match_id, m.match_date, m.place, m.tournament, m.team1, m.team1_photo, t1.goals as team1_goals, t1.shoots as team1_shoots, t1.fouls as team1_fouls, t1.assists as team1_assists, m.team2, m.team2_photo, t2.goals as team2_goals, '
+    const querymatches = 'SELECT m.match_id, to_char(m.match_date,\'DD/MM/YYYY\') as match_date, m.place, m.tournament, m.team1, m.team1_photo, t1.goals as team1_goals, t1.shoots as team1_shoots, t1.fouls as team1_fouls, t1.assists as team1_assists, m.team2, m.team2_photo, t2.goals as team2_goals, '
     + 't2.shoots as team2_shoots, t2.fouls as team2_fouls, t2.assists as team2_assists, chamigo.player_id as chamigo_id, chamigo.player_photo as chamigo_photo, chamigo.nickname as chamigo_name, chenemigo.player_id as chenemigo_id, chenemigo.player_photo as chenemigo_photo, chenemigo.nickname as chenemigo_name, '
     + 'goleador.player_id as goleador_id, goleador.player_photo as goleador_photo, goleador.nickname as goleador_name, terminator.player_id as terminator_id, terminator.player_photo as terminator_photo, terminator.nickname as terminator_name '
     +' FROM matches m, '
@@ -158,7 +158,7 @@ exports.summary = function(req, res) {
     
     const id = req.params.id;
 
-    const querystring = 'select m.match_id, m.match_date, m.summary_title, m.summary_body '
+    const querystring = 'select m.match_id, to_char(m.match_date,\'DD/MM/YYYY\') as match_date, m.summary_title, m.summary_body '
     + 'from matches m where m.match_id = '+id;
     
     const results = [];

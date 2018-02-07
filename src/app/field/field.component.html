@@ -6,6 +6,13 @@
       </h4>
     </header>
     <div class="widget-body">
+      <div *ngIf="side1==true">
+        <h3>Equipo <span class="fw-semi-bold">{{match.team1.name}}</span></h3>
+      </div>
+      <div *ngIf="side1==false">
+        <h3>Equipo <span class="fw-semi-bold">{{match.team2.name}}</span></h3>
+      </div>
+      <br>    
       <div class="stage texture">
         <div class="world">
           <div class="team" *ngIf="side1==true">

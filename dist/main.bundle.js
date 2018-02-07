@@ -275,7 +275,7 @@ var FieldComponent = /** @class */ (function () {
         this.matchService.getTeams(id)
             .subscribe(function (match) { return _this.match = match; });
     };
-    FieldComponent.prototype.swithSide = function () {
+    FieldComponent.prototype.switchSide = function () {
         this.side1 = !this.side1;
     };
     FieldComponent = __decorate([

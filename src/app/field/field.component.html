@@ -21,33 +21,12 @@
               <div class="player" [ngStyle]="{'left':player.x+'%', 'top':player.y+'%'}">
                 <div class="player__label">
                   <span>{{player.name}}</span>
+                  <br>
+                  <span ngIf*="player.goals!=0"><i class="fa fa-futbol"></i>x{{player.goals}}</span>
                 </div>
                 <div class="player__img">
                   <img [src]="player.photo">
                 </div>
-                <div class="player__card">
-                  <h3>{{player.name}}</h3>
-                  <ul class="player__card__list">
-                    <li>
-                      <span>DOB</span>
-                      <br/>{{player.dob}}</li>
-                    <li>
-                      <span>Height</span>
-                      <br/>{{player.height}}</li>
-                    <li>
-                      <span>Origin</span>
-                      <br/>{{player.origin}}</li>
-                  </ul>
-                  <ul class="player__card__list player__card__list--last">
-                    <li>
-                      <span>Games</span>
-                      <br/>{{player.games}}</li>
-                    <li>
-                      <span>Goals</span>
-                      <br/>{{player.goals}}</li>
-                  </ul>
-                </div>
-                <div class="player__placeholder"></div>
               </div>
             </div>
           </div>
@@ -58,33 +37,12 @@
               <div class="player" [ngStyle]="{'left':player.x+'%', 'top':player.y+'%'}">
                 <div class="player__label">
                   <span>{{player.name}}</span>
+                  <br>
+                  <span ngIf*="player.goals!=0"><i class="fa fa-futbol"></i>x{{player.goals}}</span>
                 </div>
                 <div class="player__img">
                   <img [src]="player.photo">
                 </div>
-                <div class="player__card">
-                  <h3>{{player.name}}</h3>
-                  <ul class="player__card__list">
-                    <li>
-                      <span>DOB</span>
-                      <br/>{{player.dob}}</li>
-                    <li>
-                      <span>Height</span>
-                      <br/>{{player.height}}</li>
-                    <li>
-                      <span>Origin</span>
-                      <br/>{{player.origin}}</li>
-                  </ul>
-                  <ul class="player__card__list player__card__list--last">
-                    <li>
-                      <span>Games</span>
-                      <br/>{{player.games}}</li>
-                    <li>
-                      <span>Goals</span>
-                      <br/>{{player.goals}}</li>
-                  </ul>
-                </div>
-                <div class="player__placeholder"></div>
               </div>
             </div>
           </div>

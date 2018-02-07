@@ -165,6 +165,8 @@ exports.teams = function(req, res) {
     let team2 = {};
     let team1_players = [];
     let team2_players = [];
+    const pos1 = [{x:50, y:85},{x:30, y:70},{x:70, y:70},{x:50,y:45},{x:50,y:20}];
+    const pos2 = [{x:50, y:5},{x:30, y:20},{x:70, y:20},{x:50,y:45},{x:50,y:70}];
     // Get a Postgres client from the connection pool
     pool.connect((err, client, done) => {
         // Handle connection errors
@@ -190,9 +192,13 @@ exports.teams = function(req, res) {
             player.score = row.score;
 
             if (team1_players.length < 5){
+                player.x = pos1[team1_players.length].x;
+                player.y = pos1[team1_players.length].y;
                 team1_players.push(player);
                 team1.name = row.team;
             }else{
+                player.x = pos2[team2_players.length].x;
+                player.y = pos2[team2_players.length].y;
                 team2_players.push(player);
                 team2.name = row.team;
             }

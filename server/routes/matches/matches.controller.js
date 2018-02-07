@@ -157,7 +157,7 @@ exports.teams = function(req, res) {
 
     const id = req.params.id;
 
-    const querystring = 'select  m.match_id, m.match_date, s.player_id, p.nickname, p.player_photo, s.team, s.position, s.goals, s.shoots, s.assists, s.fouls, s.score '
+    const querystring = 'select  m.match_id, to_char(m.match_date,\'DD/MM/YYYY\') as match_date, s.player_id, p.nickname, p.player_photo, s.team, s.position, s.goals, s.shoots, s.assists, s.fouls, s.score '
     + ' from stats s, players p, matches m where p.player_id = s.player_id and m.match_id = s.match_id and s.match_id = '+id+' order by s.team, s.position asc';
 
     let match = {};

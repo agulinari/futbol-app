@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { Match } from './model/match';
 import { MatchSummary } from './model/match-summary';
+import { MatchTeams } from './model/match-teams';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -39,6 +40,13 @@ export class MatchService {
             catchError(this.handleError<MatchSummary>(`getSummary id=${id}`))
         );
 
+    }
+
+    getTeams(id: number): Observable<MatchTeams> {
+        const url = `${this.matchesUrl}/${id}/teams`;
+        return this.http.get<MatchTeams>(url).pipe(
+            catchError(this.handleError<MatchTeams>(`getTeams id=${id}`))
+        );
     }
 
     /**

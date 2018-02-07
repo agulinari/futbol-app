@@ -1,0 +1,70 @@
+<div *ngIf="match">
+  <section widget class="widget">
+    <header>
+      <h4>
+        {{match.date}}
+      </h4>
+    </header>
+    <div class="widget-body">
+      <div class="js-stage stage texture">
+        <div class="js-world world">
+          <div class="team js-team">
+            <!-- Team cards / icons goes here -->
+            <div *ngFor="let player of match.team1.players">
+              <div class="js-player player" [ngStyle]="{'left':player.x+'%', 'top':player.y+'%'}">
+                <div class="player__label">
+                  <span>{{player.name}}</span>
+                </div>
+                <div class="player__img">
+                  <img [src]="player.photo">
+                </div>
+                <div class="player__card">
+                  <h3>{{player.name}}</h3>
+                  <ul class="player__card__list">
+                    <li>
+                      <span>DOB</span>
+                      <br/>{{player.dob}}</li>
+                    <li>
+                      <span>Height</span>
+                      <br/>{{player.height}}</li>
+                    <li>
+                      <span>Origin</span>
+                      <br/>{{player.origin}}</li>
+                  </ul>
+                  <ul class="player__card__list player__card__list--last">
+                    <li>
+                      <span>Games</span>
+                      <br/>{{player.games}}</li>
+                    <li>
+                      <span>Goals</span>
+                      <br/>{{player.goals}}</li>
+                  </ul>
+                </div>
+                <div class="player__placeholder"></div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="terrain js-terrain">
+            <div class="field field--alt"></div>
+            <div class="field ground">
+              <div class="field__texture field__texture--gradient"></div>
+              <div class="field__texture field__texture--gradient-b"></div>
+              <div class="field__texture field__texture--grass"></div>
+              <div class="field__line field__line--goal"></div>
+              <div class="field__line field__line--goal field__line--goal--far"></div>
+              <div class="field__line field__line--outline"></div>
+              <div class="field__line field__line--penalty"></div>
+              <div class="field__line field__line--penalty-arc"></div>
+              <div class="field__line field__line--penalty-arc field__line--penalty-arc--far"></div>
+              <div class="field__line field__line--mid"></div>
+              <div class="field__line field__line--circle"></div>
+              <div class="field__line field__line--penalty field__line--penalty--far"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

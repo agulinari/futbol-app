@@ -153,6 +153,64 @@ exports.show = function(req, res) {
 
 };
 
+exports.teams = function(req, res) {
+
+    const id = req.params.id;
+
+    const querystring = 'select  m.match_id, m.match_date, s.player_id, p.nickname, p.player_photo, s.team, s.position, s.goals, s.shoots, s.assists, s.fouls, s.score '
+    + ' from stats s, players p, matches m where p.player_id = s.player_id and m.match_id = s.match_id and s.match_id = '+id+' order by s.team, s.position asc';
+
+    let match = {};
+    let team1 = {};
+    let team2 = {};
+    let team1_players = [];
+    let team2_players = [];
+    // Get a Postgres client from the connection pool
+    pool.connect((err, client, done) => {
+        // Handle connection errors
+        if (err) {
+            done();
+            console.log(err);
+            return res.status(500).json({ success: false, data: err });
+        }
+        // SQL Query > Select Data
+        const query = client.query(new Query(querystring));
+        // Stream results back one row at a time
+        query.on('row', (row) => {
+            let player = {};
+            match.id = row.match_id;
+            match.date = row.match_date;
+            player.id = row.player_id;
+            player.photo = row.player_photo;
+            player.name = row.nickname;
+            player.position = row.position;
+            player.goals = row.goals;
+            player.assists = row.assists;
+            player.fouls = row.fouls;
+            player.score = row.score;
+
+            if (team1.length < 5){
+                team1_players.push(player);
+                team1.name = row.team;
+            }else{
+                team2_players.push(player);
+                team2.name = row.team;
+            }
+        });
+        team1.players = team1_players;
+        team2.players = team2_players;
+        match.team1 = team1;
+        match.team2 = team2;
+
+        // After all data is returned, close connection and return results
+        query.on('end', () => {
+            done();
+            return res.json(match);
+        });
+    });
+
+}
+
 // Get a single match summary
 exports.summary = function(req, res) {
     

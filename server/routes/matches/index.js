@@ -7,5 +7,6 @@ var router = express.Router();
 router.get('/', controller.index);
 router.get('/:id', controller.show);
 router.get('/:id/summary', controller.summary);
+router.get('/:id/teams', controller.teams);
 // Export module
 module.exports = router;

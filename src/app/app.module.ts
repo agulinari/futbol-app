@@ -22,6 +22,7 @@ import { MatchService } from './match.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
+import { FieldComponent } from './field/field.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     PlayersComponent,
     MatchesComponent,
     PlayerFormComponent,
-    MatchFormComponent
+    MatchFormComponent,
+    FieldComponent
   ],
   imports: [
     BrowserModule,

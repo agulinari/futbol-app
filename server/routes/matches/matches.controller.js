@@ -189,7 +189,7 @@ exports.teams = function(req, res) {
             player.fouls = row.fouls;
             player.score = row.score;
 
-            if (team1.length < 5){
+            if (team1_players.length < 5){
                 team1_players.push(player);
                 team1.name = row.team;
             }else{

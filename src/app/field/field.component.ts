@@ -26,7 +26,7 @@ export class FieldComponent implements OnInit {
     .subscribe(match => this.match = match);
   }
 
-  swithSide(): void {
+  switchSide(): void {
     this.side1 = !this.side1;
   }
 

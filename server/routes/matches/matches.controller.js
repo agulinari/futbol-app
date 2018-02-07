@@ -165,8 +165,8 @@ exports.teams = function(req, res) {
     let team2 = {};
     let team1_players = [];
     let team2_players = [];
-    const pos1 = [{x:50, y:85},{x:30, y:70},{x:70, y:70},{x:50,y:45},{x:50,y:20}];
-    const pos2 = [{x:50, y:5},{x:30, y:20},{x:70, y:20},{x:50,y:45},{x:50,y:70}];
+    const pos1 = [{x:50, y:80},{x:30, y:65},{x:70, y:65},{x:50,y:15},{x:50,y:45}];
+    const pos2 = [{x:50, y:10},{x:30, y:25},{x:70, y:25},{x:50,y:70},{x:50,y:45}];
     // Get a Postgres client from the connection pool
     pool.connect((err, client, done) => {
         // Handle connection errors

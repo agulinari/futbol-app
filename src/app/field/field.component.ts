@@ -11,10 +11,12 @@ import { MatchTeams } from '../model/match-teams';
 export class FieldComponent implements OnInit {
 
   private match: MatchTeams;
+  private side1: boolean;
 
   constructor(private matchService: MatchService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.side1 = true;
     this.getMatch();
   }
 
@@ -22,6 +24,10 @@ export class FieldComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.matchService.getTeams(id)
     .subscribe(match => this.match = match);
+  }
+
+  swithSide(): void {
+    this.side1 = !this.side1;
   }
 
 }

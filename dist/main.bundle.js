@@ -477,7 +477,7 @@ var MatchDetailComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/match-form/match-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Match Form</h2>\n<form [formGroup]=\"matchForm\" novalidate>\n  <div class=\"form-group\">\n    <label class=\"center-block\"> Fecha:\n      <input class=\"form-control\" formControlDate=\"date\">\n    </label>\n  </div>\n</form>\n<p>Form value: {{ matchForm.value}} | json }}</p>\n<p>Form status: {{ matchForm.status}} | json }}</p>\n"
+module.exports = "<h2>Match Form</h2>\n<form [formGroup]=\"matchForm\" novalidate>\n  <div class=\"form-group\">\n    <label class=\"center-block\"> Fecha:\n      <input class=\"form-control\" formControlName=\"date\">\n    </label>\n  </div>\n</form>\n<p>Form value: {{ matchForm.value}} | json }}</p>\n<p>Form status: {{ matchForm.status}} | json }}</p>\n"
 
 /***/ }),
 

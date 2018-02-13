@@ -1,6 +1,10 @@
 export class MatchTeams {
     id: number;
     date: string;
+    place: string;
+    tournament: string;
+    summary_title: string;
+    summary_body: string;
     team1: {
         name: string;
         players: [

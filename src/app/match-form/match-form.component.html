@@ -1,3 +1,10 @@
-<p>
-  match-form works!
-</p>
+<h2>Match Form</h2>
+<form [formGroup]="matchForm" novalidate>
+  <div class="form-group">
+    <label class="center-block"> Fecha:
+      <input class="form-control" formControlDate="date">
+    </label>
+  </div>
+</form>
+<p>Form value: {{ matchForm.value}} | json }}</p>
+<p>Form status: {{ matchForm.status}} | json }}</p>

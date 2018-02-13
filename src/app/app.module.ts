@@ -23,6 +23,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 import { FieldComponent } from './field/field.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FieldComponent } from './field/field.component';
     DataTableModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [PlayerService, MatchService],
   bootstrap: [AppComponent]

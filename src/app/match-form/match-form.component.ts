@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-match-form',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchFormComponent implements OnInit {
 
-  constructor() { }
+  matchForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.createForm();
+   }
+
+   createForm() {
+     this.matchForm = this.fb.group({
+      date: ['', Validators.required],
+     });
+   }
 
   ngOnInit() {
   }

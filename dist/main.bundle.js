@@ -48,7 +48,7 @@ var routes = [
     { path: 'player/:id', component: __WEBPACK_IMPORTED_MODULE_3__player_detail_player_detail_component__["a" /* PlayerDetailComponent */] },
     { path: 'matches', component: __WEBPACK_IMPORTED_MODULE_4__matches_matches_component__["a" /* MatchesComponent */] },
     { path: 'match/:id', component: __WEBPACK_IMPORTED_MODULE_5__match_detail_match_detail_component__["a" /* MatchDetailComponent */] },
-    { path: 'match/new', component: __WEBPACK_IMPORTED_MODULE_6__match_form_match_form_component__["a" /* MatchFormComponent */] }
+    { path: 'matches/new', component: __WEBPACK_IMPORTED_MODULE_6__match_form_match_form_component__["a" /* MatchFormComponent */] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

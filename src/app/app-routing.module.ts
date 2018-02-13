@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'player/:id', component: PlayerDetailComponent },
   { path: 'matches', component: MatchesComponent },
   { path: 'match/:id', component: MatchDetailComponent },
-  { path: 'match/new', component: MatchFormComponent }
+  { path: 'matches/new', component: MatchFormComponent }
 ];
 
 @NgModule({

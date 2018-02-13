@@ -28,6 +28,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__player_detail_player_detail_component__ = __webpack_require__("../../../../../src/app/player-detail/player-detail.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matches_matches_component__ = __webpack_require__("../../../../../src/app/matches/matches.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__match_detail_match_detail_component__ = __webpack_require__("../../../../../src/app/match-detail/match-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__match_form_match_form_component__ = __webpack_require__("../../../../../src/app/match-form/match-form.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -40,12 +41,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: '', redirectTo: '/players', pathMatch: 'full' },
     { path: 'players', component: __WEBPACK_IMPORTED_MODULE_2__players_players_component__["a" /* PlayersComponent */] },
     { path: 'player/:id', component: __WEBPACK_IMPORTED_MODULE_3__player_detail_player_detail_component__["a" /* PlayerDetailComponent */] },
     { path: 'matches', component: __WEBPACK_IMPORTED_MODULE_4__matches_matches_component__["a" /* MatchesComponent */] },
-    { path: 'match/:id', component: __WEBPACK_IMPORTED_MODULE_5__match_detail_match_detail_component__["a" /* MatchDetailComponent */] }
+    { path: 'match/:id', component: __WEBPACK_IMPORTED_MODULE_5__match_detail_match_detail_component__["a" /* MatchDetailComponent */] },
+    { path: 'match/new', component: __WEBPACK_IMPORTED_MODULE_6__match_form_match_form_component__["a" /* MatchFormComponent */] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -176,6 +179,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -200,9 +204,10 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_5_ng2_charts__["ChartsModule"],
                 __WEBPACK_IMPORTED_MODULE_6_angular2_datatable__["DataTableModule"],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_19__app_routing_module__["a" /* AppRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_20__angular_common_http__["b" /* HttpClientModule */]
+                __WEBPACK_IMPORTED_MODULE_20__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_17__player_service__["a" /* PlayerService */], __WEBPACK_IMPORTED_MODULE_18__match_service__["a" /* MatchService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
@@ -472,7 +477,7 @@ var MatchDetailComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/match-form/match-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  match-form works!\n</p>\n"
+module.exports = "<h2>Match Form</h2>\n<form [formGroup]=\"matchForm\" novalidate>\n  <div class=\"form-group\">\n    <label class=\"center-block\"> Fecha:\n      <input class=\"form-control\" formControlDate=\"date\">\n    </label>\n  </div>\n</form>\n<p>Form value: {{ matchForm.value}} | json }}</p>\n<p>Form status: {{ matchForm.status}} | json }}</p>\n"
 
 /***/ }),
 
@@ -500,6 +505,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MatchFormComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -510,9 +516,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var MatchFormComponent = /** @class */ (function () {
-    function MatchFormComponent() {
+    function MatchFormComponent(fb) {
+        this.fb = fb;
+        this.createForm();
     }
+    MatchFormComponent.prototype.createForm = function () {
+        this.matchForm = this.fb.group({
+            date: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+        });
+    };
     MatchFormComponent.prototype.ngOnInit = function () {
     };
     MatchFormComponent = __decorate([
@@ -521,7 +535,7 @@ var MatchFormComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/match-form/match-form.component.html"),
             styles: [__webpack_require__("../../../../../src/app/match-form/match-form.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]])
     ], MatchFormComponent);
     return MatchFormComponent;
 }());

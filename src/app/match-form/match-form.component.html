@@ -1,9 +1,83 @@
 <h2>Match Form</h2>
 <form [formGroup]="matchForm" novalidate>
   <div class="form-group">
+    <label class="center-block"> Torneo:
+      <input class="form-control" formControlName="tournament">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block"> Fecha:
+      <input class="form-control" formControlName="place">
+     </label>
+  </div>
+  <div class="form-group">
     <label class="center-block"> Fecha:
       <input class="form-control" formControlName="date">
     </label>
+  </div>
+  <div formGroupName="team1" class="well well-lg">
+    <h4>Equipo 1</h4>
+    <div class="form-group">
+        <label class="center-block"> Nombre:
+          <input class="form-control" formControlName="name">
+        </label>
+    </div>
+    <div formGroupName="player1" class="well well-lg">
+        <h4>Jugador 1</h4>
+        <div class="form-group">
+            <label class="center-block"> Nombre:
+              <input class="form-control" formControlName="id">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block"> Goles:
+              <input class="form-control" formControlName="goals">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block"> Asistencias:
+              <input class="form-control" formControlName="assists">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block"> Faltas:
+              <input class="form-control" formControlName="fouls">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block"> Puntaje:
+              <input class="form-control" formControlName="score">
+            </label>
+        </div>
+    </div>
+    <div formGroupName="player2" class="well well-lg">
+        <h4>Jugador 2</h4>
+        <div class="form-group">
+            <label class="center-block"> Nombre:
+              <input class="form-control" formControlName="id">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block"> Goles:
+              <input class="form-control" formControlName="goals">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block"> Asistencias:
+              <input class="form-control" formControlName="assists">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block"> Faltas:
+              <input class="form-control" formControlName="fouls">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block"> Puntaje:
+              <input class="form-control" formControlName="score">
+            </label>
+        </div>
+    </div>
   </div>
 </form>
 <p>Form value: {{ matchForm.value | json }}</p>

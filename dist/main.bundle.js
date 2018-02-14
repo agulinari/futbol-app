@@ -480,7 +480,7 @@ var MatchDetailComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/match-form/match-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Match Form</h2>\n<form [formGroup]=\"matchForm\" novalidate>\n  <div class=\"form-group\">\n    <label class=\"center-block\"> Fecha:\n      <input class=\"form-control\" formControlName=\"date\">\n    </label>\n  </div>\n</form>\n<p>Form value: {{ matchForm.value | json }}</p>\n<p>Form status: {{ matchForm.status | json }}</p>\n"
+module.exports = "<h2>Match Form</h2>\n<form [formGroup]=\"matchForm\" novalidate>\n  <div class=\"form-group\">\n    <label class=\"center-block\"> Torneo:\n      <input class=\"form-control\" formControlName=\"tournament\">\n    </label>\n  </div>\n  <div class=\"form-group\">\n    <label class=\"center-block\"> Fecha:\n      <input class=\"form-control\" formControlName=\"place\">\n     </label>\n  </div>\n  <div class=\"form-group\">\n    <label class=\"center-block\"> Fecha:\n      <input class=\"form-control\" formControlName=\"date\">\n    </label>\n  </div>\n  <div formGroupName=\"team1\" class=\"well well-lg\">\n    <h4>Equipo 1</h4>\n    <div class=\"form-group\">\n        <label class=\"center-block\"> Nombre:\n          <input class=\"form-control\" formControlName=\"name\">\n        </label>\n    </div>\n    <div formGroupName=\"player1\" class=\"well well-lg\">\n        <h4>Jugador 1</h4>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Nombre:\n              <input class=\"form-control\" formControlName=\"id\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Goles:\n              <input class=\"form-control\" formControlName=\"goals\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Asistencias:\n              <input class=\"form-control\" formControlName=\"assists\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Faltas:\n              <input class=\"form-control\" formControlName=\"fouls\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Puntaje:\n              <input class=\"form-control\" formControlName=\"score\">\n            </label>\n        </div>\n    </div>\n    <div formGroupName=\"player2\" class=\"well well-lg\">\n        <h4>Jugador 2</h4>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Nombre:\n              <input class=\"form-control\" formControlName=\"id\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Goles:\n              <input class=\"form-control\" formControlName=\"goals\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Asistencias:\n              <input class=\"form-control\" formControlName=\"assists\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Faltas:\n              <input class=\"form-control\" formControlName=\"fouls\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Puntaje:\n              <input class=\"form-control\" formControlName=\"score\">\n            </label>\n        </div>\n    </div>\n  </div>\n</form>\n<p>Form value: {{ matchForm.value | json }}</p>\n<p>Form status: {{ matchForm.status | json }}</p>\n"
 
 /***/ }),
 
@@ -527,7 +527,87 @@ var MatchFormComponent = /** @class */ (function () {
     }
     MatchFormComponent.prototype.createForm = function () {
         this.matchForm = this.fb.group({
+            tournament: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+            place: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
             date: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+            team1: this.fb.group({
+                name: ['Los amigos de Pato', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                player1: this.fb.group({
+                    id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
+                }),
+                player2: this.fb.group({
+                    id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
+                }),
+                player3: this.fb.group({
+                    id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
+                }),
+                player4: this.fb.group({
+                    id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
+                }),
+                player5: this.fb.group({
+                    id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
+                })
+            }),
+            team2: this.fb.group({
+                name: ['Los amigos de Guille', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                player1: this.fb.group({
+                    id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
+                }),
+                player2: this.fb.group({
+                    id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
+                }),
+                player3: this.fb.group({
+                    id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
+                }),
+                player4: this.fb.group({
+                    id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
+                }),
+                player5: this.fb.group({
+                    id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
+                })
+            }),
+            summaryTitle: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+            summaryBody: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
         });
     };
     MatchFormComponent.prototype.ngOnInit = function () {

@@ -575,16 +575,46 @@ var MatchFormComponent = /** @class */ (function () {
     };
     MatchFormComponent.prototype.onChanges = function () {
         var _this = this;
-        this.matchForm.get('team1.player1.id').valueChanges.subscribe(function (id) { return _this.playersSelected[0] = id; });
-        this.matchForm.get('team1.player2.id').valueChanges.subscribe(function (id) { return _this.playersSelected[1] = id; });
-        this.matchForm.get('team1.player3.id').valueChanges.subscribe(function (id) { return _this.playersSelected[2] = id; });
-        this.matchForm.get('team1.player4.id').valueChanges.subscribe(function (id) { return _this.playersSelected[3] = id; });
-        this.matchForm.get('team1.player5.id').valueChanges.subscribe(function (id) { return _this.playersSelected[4] = id; });
-        this.matchForm.get('team2.player1.id').valueChanges.subscribe(function (id) { return _this.playersSelected[5] = id; });
-        this.matchForm.get('team2.player2.id').valueChanges.subscribe(function (id) { return _this.playersSelected[6] = id; });
-        this.matchForm.get('team2.player3.id').valueChanges.subscribe(function (id) { return _this.playersSelected[7] = id; });
-        this.matchForm.get('team2.player4.id').valueChanges.subscribe(function (id) { return _this.playersSelected[8] = id; });
-        this.matchForm.get('team2.player5.id').valueChanges.subscribe(function (id) { return _this.playersSelected[9] = id; });
+        this.matchForm.get('team1.player1.id').valueChanges.subscribe(function (id) {
+            _this.playersSelected[0] = +id;
+            _this.playersSelected = _this.playersSelected.slice();
+        });
+        this.matchForm.get('team1.player2.id').valueChanges.subscribe(function (id) {
+            _this.playersSelected[1] = +id;
+            _this.playersSelected = _this.playersSelected.slice();
+        });
+        this.matchForm.get('team1.player3.id').valueChanges.subscribe(function (id) {
+            _this.playersSelected[2] = +id;
+            _this.playersSelected = _this.playersSelected.slice();
+        });
+        this.matchForm.get('team1.player4.id').valueChanges.subscribe(function (id) {
+            _this.playersSelected[3] = +id;
+            _this.playersSelected = _this.playersSelected.slice();
+        });
+        this.matchForm.get('team1.player5.id').valueChanges.subscribe(function (id) {
+            _this.playersSelected[4] = +id;
+            _this.playersSelected = _this.playersSelected.slice();
+        });
+        this.matchForm.get('team2.player1.id').valueChanges.subscribe(function (id) {
+            _this.playersSelected[5] = +id;
+            _this.playersSelected = _this.playersSelected.slice();
+        });
+        this.matchForm.get('team2.player2.id').valueChanges.subscribe(function (id) {
+            _this.playersSelected[6] = +id;
+            _this.playersSelected = _this.playersSelected.slice();
+        });
+        this.matchForm.get('team2.player3.id').valueChanges.subscribe(function (id) {
+            _this.playersSelected[7] = +id;
+            _this.playersSelected = _this.playersSelected.slice();
+        });
+        this.matchForm.get('team2.player4.id').valueChanges.subscribe(function (id) {
+            _this.playersSelected[8] = +id;
+            _this.playersSelected = _this.playersSelected.slice();
+        });
+        this.matchForm.get('team2.player5.id').valueChanges.subscribe(function (id) {
+            _this.playersSelected[9] = +id;
+            _this.playersSelected = _this.playersSelected.slice();
+        });
     };
     MatchFormComponent.prototype.selectPlayer = function (index) {
         var formModel = this.matchForm.value;

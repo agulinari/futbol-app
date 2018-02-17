@@ -27,16 +27,46 @@ export class MatchFormComponent implements OnInit {
   }
 
   onChanges(): void {
-    this.matchForm.get('team1.player1.id').valueChanges.subscribe(id => this.playersSelected[0] = id);
-    this.matchForm.get('team1.player2.id').valueChanges.subscribe(id => this.playersSelected[1] = id);
-    this.matchForm.get('team1.player3.id').valueChanges.subscribe(id => this.playersSelected[2] = id);
-    this.matchForm.get('team1.player4.id').valueChanges.subscribe(id => this.playersSelected[3] = id);
-    this.matchForm.get('team1.player5.id').valueChanges.subscribe(id => this.playersSelected[4] = id);
-    this.matchForm.get('team2.player1.id').valueChanges.subscribe(id => this.playersSelected[5] = id);
-    this.matchForm.get('team2.player2.id').valueChanges.subscribe(id => this.playersSelected[6] = id);
-    this.matchForm.get('team2.player3.id').valueChanges.subscribe(id => this.playersSelected[7] = id);
-    this.matchForm.get('team2.player4.id').valueChanges.subscribe(id => this.playersSelected[8] = id);
-    this.matchForm.get('team2.player5.id').valueChanges.subscribe(id => this.playersSelected[9] = id);
+    this.matchForm.get('team1.player1.id').valueChanges.subscribe(id => {
+      this.playersSelected[0] = +id;
+      this.playersSelected = this.playersSelected.slice();
+    });
+    this.matchForm.get('team1.player2.id').valueChanges.subscribe(id => {
+      this.playersSelected[1] = +id;
+      this.playersSelected = this.playersSelected.slice();
+    });
+    this.matchForm.get('team1.player3.id').valueChanges.subscribe(id => {
+      this.playersSelected[2] = +id;
+      this.playersSelected = this.playersSelected.slice();
+    });
+    this.matchForm.get('team1.player4.id').valueChanges.subscribe(id => {
+      this.playersSelected[3] = +id;
+      this.playersSelected = this.playersSelected.slice();
+    });
+    this.matchForm.get('team1.player5.id').valueChanges.subscribe(id => {
+      this.playersSelected[4] = +id;
+      this.playersSelected = this.playersSelected.slice();
+    });
+    this.matchForm.get('team2.player1.id').valueChanges.subscribe(id => {
+      this.playersSelected[5] = +id;
+      this.playersSelected = this.playersSelected.slice();
+    });
+    this.matchForm.get('team2.player2.id').valueChanges.subscribe(id => {
+      this.playersSelected[6] = +id;
+      this.playersSelected = this.playersSelected.slice();
+    });
+    this.matchForm.get('team2.player3.id').valueChanges.subscribe(id => {
+      this.playersSelected[7] = +id;
+      this.playersSelected = this.playersSelected.slice();
+    });
+    this.matchForm.get('team2.player4.id').valueChanges.subscribe(id => {
+      this.playersSelected[8] = +id;
+      this.playersSelected = this.playersSelected.slice();
+    });
+    this.matchForm.get('team2.player5.id').valueChanges.subscribe(id => {
+      this.playersSelected[9] = +id;
+      this.playersSelected = this.playersSelected.slice();
+    });
   }
 
   selectPlayer(index: number): void {

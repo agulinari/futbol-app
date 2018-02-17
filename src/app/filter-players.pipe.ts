@@ -6,11 +6,17 @@ import { Player } from './model/player';
 })
 export class FilterPlayersPipe implements PipeTransform {
 
-  transform(players: Player[], filter: any[]): any {
+  transform(players: Player[], filter: any[], id: number): any {
     if (!players || ! filter) {
       return players;
     }
-    return players.filter(player => !filter.some(id => id === player.id));
+    return players.filter(player => {
+      if (player.id === id) {
+        return true;
+      } else {
+        return !filter.some(val => val === player.id);
+      }
+    });
   }
 
 }

@@ -44,7 +44,7 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team1.player1.id').value" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -76,7 +76,7 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:id" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -108,7 +108,7 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:id" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -140,7 +140,7 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:id" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -172,7 +172,7 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of player | filterPlayers:playersSelected:id" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -245,7 +245,7 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:id" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -277,7 +277,7 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:id" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -309,7 +309,7 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:id" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -341,7 +341,7 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:id" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>

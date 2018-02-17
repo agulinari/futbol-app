@@ -23,6 +23,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 import { FieldComponent } from './field/field.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FilterPlayersPipe } from './filter-players.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatchesComponent,
     PlayerFormComponent,
     MatchFormComponent,
-    FieldComponent
+    FieldComponent,
+    FilterPlayersPipe
   ],
   imports: [
     BrowserModule,

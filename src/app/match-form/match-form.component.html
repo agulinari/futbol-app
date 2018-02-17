@@ -213,7 +213,7 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>

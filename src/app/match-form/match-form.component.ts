@@ -12,9 +12,11 @@ export class MatchFormComponent implements OnInit {
 
   matchForm: FormGroup;
   players: Player[];
+  playersSelected: number[];
 
   constructor(private fb: FormBuilder, private playerService: PlayerService) {
     this.createForm();
+    this.playersSelected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
    }
 
    getPlayers(): void {
@@ -22,6 +24,24 @@ export class MatchFormComponent implements OnInit {
         .subscribe(players => {
           this.players = players;
         });
+  }
+
+  onChanges(): void {
+    this.matchForm.get('team1.player1.id').valueChanges.subscribe(id => this.playersSelected[0] = id);
+    this.matchForm.get('team1.player2.id').valueChanges.subscribe(id => this.playersSelected[1] = id);
+    this.matchForm.get('team1.player3.id').valueChanges.subscribe(id => this.playersSelected[2] = id);
+    this.matchForm.get('team1.player4.id').valueChanges.subscribe(id => this.playersSelected[3] = id);
+    this.matchForm.get('team1.player5.id').valueChanges.subscribe(id => this.playersSelected[4] = id);
+    this.matchForm.get('team2.player1.id').valueChanges.subscribe(id => this.playersSelected[5] = id);
+    this.matchForm.get('team2.player2.id').valueChanges.subscribe(id => this.playersSelected[6] = id);
+    this.matchForm.get('team2.player3.id').valueChanges.subscribe(id => this.playersSelected[7] = id);
+    this.matchForm.get('team2.player4.id').valueChanges.subscribe(id => this.playersSelected[8] = id);
+    this.matchForm.get('team2.player5.id').valueChanges.subscribe(id => this.playersSelected[9] = id);
+  }
+
+  selectPlayer(index: number): void {
+    const formModel = this.matchForm.value;
+    this.playersSelected[index] = formModel.team2.player1.id;
   }
 
    createForm() {
@@ -112,6 +132,7 @@ export class MatchFormComponent implements OnInit {
 
   ngOnInit() {
     this.getPlayers();
+    this.onChanges();
   }
 
 }

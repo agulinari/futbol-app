@@ -1,22 +1,29 @@
 <h2>Match Form</h2>
 <form class="form-horizontal form-label-left" [formGroup]="matchForm" novalidate>
-  <div class="row">
-  <div class="form-group">
-    <label class="center-block"> Torneo:
-      <input class="form-control" formControlName="tournament">
-    </label>
-  </div>
-  <div class="form-group">
-    <label class="center-block"> Fecha:
-      <input type="date" class="form-control" formControlName="place">
-     </label>
-  </div>
-  <div class="form-group">
-    <label class="center-block"> Lugar:
-      <input class="form-control" formControlName="date">
-    </label>
-  </div>
-</div>
+  <fieldset>
+    <div class="form-group row">
+      <label class="col-form-label col-md-4" for="tournament">Torneo</label>
+
+      <div class="col-md-4">
+        <input type="text" formControlName="tournament" id="tournament" name="tournament" class="form-control input-transparent">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-md-4" for="place">Lugar</label>
+
+      <div class="col-md-4">
+        <input type="text" formControlName="place" id="place" name="place" class="form-control input-transparent">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-md-4" for="date">Fecha</label>
+
+      <div class="col-md-4">
+        <input type="date" formControlName="date" id="date" name="date" class="form-control input-transparent">
+      </div>
+    </div>
+  </fieldset>
+
   <fieldset class="mt-md">
     <legend>Equipos
       <small>Jugadores</small>
@@ -24,67 +31,67 @@
   </fieldset>
   <div formGroupName="team1">
     <div class="form-group">
-        <label class="center-block"> Equipo 1:
-          <input class="form-control" formControlName="name">
-        </label>
+      <label class="center-block"> Equipo 1
+        <input class="form-control" formControlName="name">
+      </label>
     </div>
     <div formGroupName="player1" class="well well-lg">
-        <h4>Jugador 1</h4>
-        <div class="row">
+      <h4>Jugador 1</h4>
+      <div class="row">
         <div class="form-group">
-            <label class="center-block"> Nombre:
-              <input class="form-control" formControlName="id">
-            </label>
+          <label class="center-block"> Nombre
+            <input class="form-control input-transparent" formControlName="id">
+          </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Goles:
-              <input class="form-control" formControlName="goals">
-            </label>
+          <label class="center-block"> Goles
+            <input class="form-control input-transparent" formControlName="goals">
+          </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Asistencias:
-              <input class="form-control" formControlName="assists">
-            </label>
+          <label class="center-block"> Asistencias
+            <input class="form-control input-transparent" formControlName="assists">
+          </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Faltas:
-              <input class="form-control" formControlName="fouls">
-            </label>
+          <label class="center-block"> Faltas
+            <input class="form-control input-transparent" formControlName="fouls">
+          </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Puntaje:
-              <input class="form-control" formControlName="score">
-            </label>
+          <label class="center-block"> Puntaje
+            <input class="form-control input-transparent" formControlName="score">
+          </label>
         </div>
       </div>
     </div>
     <div formGroupName="player2" class="well well-lg">
-        <h4>Jugador 2</h4>
-        <div class="row">
+      <h4>Jugador 2</h4>
+      <div class="row">
         <div class="form-group">
-            <label class="center-block"> Nombre:
-              <input class="form-control" formControlName="id">
-            </label>
+          <label class="center-block"> Nombre
+            <input class="form-control input-transparent" formControlName="id">
+          </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Goles:
-              <input class="form-control" formControlName="goals">
-            </label>
+          <label class="center-block"> Goles
+            <input class="form-control input-transparent" formControlName="goals">
+          </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Asistencias:
-              <input class="form-control" formControlName="assists">
-            </label>
+          <label class="center-block"> Asistencias
+            <input class="form-control input-transparent" formControlName="assists">
+          </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Faltas:
-              <input class="form-control" formControlName="fouls">
-            </label>
+          <label class="center-block"> Faltas
+            <input class="form-control input-transparent" formControlName="fouls">
+          </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Puntaje:
-              <input class="form-control" formControlName="score">
-            </label>
+          <label class="center-block"> Puntaje
+            <input class="form-control input-transparent" formControlName="score">
+          </label>
         </div>
       </div>
     </div>

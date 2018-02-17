@@ -1,39 +1,42 @@
-<h2>Match Form</h2>
+<h2>Nuevo Partido</h2>
 <form class="form-horizontal form-label-left" [formGroup]="matchForm" novalidate>
-  <fieldset>
-    <div class="form-group row">
-      <label class="col-form-label col-md-4" for="tournament">Torneo</label>
+  <div class="well well-lg">
+    <fieldset>
+      <div class="form-group row">
+        <label class="col-form-label col-md-4" for="tournament">Torneo</label>
 
-      <div class="col-md-4">
-        <input type="text" formControlName="tournament" id="tournament" name="tournament" class="form-control input-transparent">
+        <div class="col-md-4">
+          <input type="text" formControlName="tournament" id="tournament" name="tournament" class="form-control input-transparent">
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-form-label col-md-4" for="place">Lugar</label>
+      <div class="form-group row">
+        <label class="col-form-label col-md-4" for="place">Lugar</label>
 
-      <div class="col-md-4">
-        <input type="text" formControlName="place" id="place" name="place" class="form-control input-transparent">
+        <div class="col-md-4">
+          <input type="text" formControlName="place" id="place" name="place" class="form-control input-transparent">
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-form-label col-md-4" for="date">Fecha</label>
+      <div class="form-group row">
+        <label class="col-form-label col-md-4" for="date">Fecha</label>
 
-      <div class="col-md-4">
-        <input type="date" formControlName="date" id="date" name="date" class="form-control input-transparent">
+        <div class="col-md-4">
+          <input type="date" formControlName="date" id="date" name="date" class="form-control input-transparent">
+        </div>
       </div>
-    </div>
-  </fieldset>
-
+    </fieldset>
+  </div>
   <fieldset class="mt-md">
     <legend>Equipos
       <small>Jugadores</small>
     </legend>
   </fieldset>
   <div formGroupName="team1" class="well well-lg">
-    <div class="form-group">
-      <label class="center-block"> Equipo 1
-        <input class="form-control" formControlName="name">
-      </label>
+    <div class="form-group row">
+      <label class="col-form-label col-md-4" for="tournament">Equipo 1</label>
+
+      <div class="col-md-4">
+        <input type="text" formControlName="name" id="name" name="name" class="form-control input-transparent">
+      </div>
     </div>
     <div formGroupName="player1">
       <h4>Arquero</h4>
@@ -74,7 +77,97 @@
           </label>
         </div>
         <div class="form-group">
-          <label class="center-block col-xs-2"> Goles
+          <label class="center-block"> Goles
+            <input class="form-control input-transparent" formControlName="goals">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Asistencias
+            <input class="form-control input-transparent" formControlName="assists">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Faltas
+            <input class="form-control input-transparent" formControlName="fouls">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Puntaje
+            <input class="form-control input-transparent" formControlName="score">
+          </label>
+        </div>
+      </div>
+    </div>
+    <div formGroupName="player3">
+      <h4>Jugador 2</h4>
+      <div class="row">
+        <div class="form-group">
+          <label class="center-block"> Nombre
+            <input class="form-control input-transparent" formControlName="id">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Goles
+            <input class="form-control input-transparent" formControlName="goals">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Asistencias
+            <input class="form-control input-transparent" formControlName="assists">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Faltas
+            <input class="form-control input-transparent" formControlName="fouls">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Puntaje
+            <input class="form-control input-transparent" formControlName="score">
+          </label>
+        </div>
+      </div>
+    </div>
+    <div formGroupName="player4">
+      <h4>Jugador 3</h4>
+      <div class="row">
+        <div class="form-group">
+          <label class="center-block"> Nombre
+            <input class="form-control input-transparent" formControlName="id">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Goles
+            <input class="form-control input-transparent" formControlName="goals">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Asistencias
+            <input class="form-control input-transparent" formControlName="assists">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Faltas
+            <input class="form-control input-transparent" formControlName="fouls">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Puntaje
+            <input class="form-control input-transparent" formControlName="score">
+          </label>
+        </div>
+      </div>
+    </div>
+    <div formGroupName="player5">
+      <h4>Jugador 4</h4>
+      <div class="row">
+        <div class="form-group">
+          <label class="center-block"> Nombre
+            <input class="form-control input-transparent" formControlName="id">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block"> Goles
             <input class="form-control input-transparent" formControlName="goals">
           </label>
         </div>
@@ -96,6 +189,165 @@
       </div>
     </div>
   </div>
+  <div formGroupName="team2" class="well well-lg">
+      <div class="form-group row">
+        <label class="col-form-label col-md-4" for="tournament">Equipo 2</label>
+  
+        <div class="col-md-4">
+          <input type="text" formControlName="name" id="name" name="name" class="form-control input-transparent">
+        </div>
+      </div>
+      <div formGroupName="player1">
+        <h4>Arquero</h4>
+        <div class="row">
+          <div class="form-group">
+            <label class="center-block"> Nombre
+              <input class="form-control input-transparent" formControlName="id">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Goles
+              <input class="form-control input-transparent" formControlName="goals">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Asistencias
+              <input class="form-control input-transparent" formControlName="assists">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Faltas
+              <input class="form-control input-transparent" formControlName="fouls">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Puntaje
+              <input class="form-control input-transparent" formControlName="score">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div formGroupName="player2">
+        <h4>Jugador 1</h4>
+        <div class="row">
+          <div class="form-group">
+            <label class="center-block"> Nombre
+              <input class="form-control input-transparent" formControlName="id">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Goles
+              <input class="form-control input-transparent" formControlName="goals">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Asistencias
+              <input class="form-control input-transparent" formControlName="assists">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Faltas
+              <input class="form-control input-transparent" formControlName="fouls">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Puntaje
+              <input class="form-control input-transparent" formControlName="score">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div formGroupName="player3">
+        <h4>Jugador 2</h4>
+        <div class="row">
+          <div class="form-group">
+            <label class="center-block"> Nombre
+              <input class="form-control input-transparent" formControlName="id">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Goles
+              <input class="form-control input-transparent" formControlName="goals">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Asistencias
+              <input class="form-control input-transparent" formControlName="assists">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Faltas
+              <input class="form-control input-transparent" formControlName="fouls">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Puntaje
+              <input class="form-control input-transparent" formControlName="score">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div formGroupName="player4">
+        <h4>Jugador 3</h4>
+        <div class="row">
+          <div class="form-group">
+            <label class="center-block"> Nombre
+              <input class="form-control input-transparent" formControlName="id">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Goles
+              <input class="form-control input-transparent" formControlName="goals">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Asistencias
+              <input class="form-control input-transparent" formControlName="assists">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Faltas
+              <input class="form-control input-transparent" formControlName="fouls">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Puntaje
+              <input class="form-control input-transparent" formControlName="score">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div formGroupName="player5">
+        <h4>Jugador 4</h4>
+        <div class="row">
+          <div class="form-group">
+            <label class="center-block"> Nombre
+              <input class="form-control input-transparent" formControlName="id">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Goles
+              <input class="form-control input-transparent" formControlName="goals">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Asistencias
+              <input class="form-control input-transparent" formControlName="assists">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Faltas
+              <input class="form-control input-transparent" formControlName="fouls">
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="center-block"> Puntaje
+              <input class="form-control input-transparent" formControlName="score">
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
 </form>
 <p>Form value: {{ matchForm.value | json }}</p>
 <p>Form status: {{ matchForm.status | json }}</p>

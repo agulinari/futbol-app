@@ -325,7 +325,7 @@ var FilterPlayersPipe = /** @class */ (function () {
             return players;
         }
         return players.filter(function (player) {
-            if (player.id === id) {
+            if (player.id === +id) {
                 return true;
             }
             else {

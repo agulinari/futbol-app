@@ -11,7 +11,7 @@ export class FilterPlayersPipe implements PipeTransform {
       return players;
     }
     return players.filter(player => {
-      if (player.id === id) {
+      if (player.id === +id) {
         return true;
       } else {
         return !filter.some(val => val === player.id);

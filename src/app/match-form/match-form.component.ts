@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PlayerService } from '../player.service';
+import { Player } from '../model/player';
 
 @Component({
   selector: 'app-match-form',
@@ -9,10 +11,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class MatchFormComponent implements OnInit {
 
   matchForm: FormGroup;
+  players: Player[];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private playerService: PlayerService) {
     this.createForm();
    }
+
+   getPlayers(): void {
+    this.playerService.getPlayers()
+        .subscribe(players => {
+          this.players = players;
+        });
+  }
 
    createForm() {
      this.matchForm = this.fb.group({
@@ -101,6 +111,7 @@ export class MatchFormComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.getPlayers();
   }
 
 }

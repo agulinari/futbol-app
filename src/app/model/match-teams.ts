@@ -7,12 +7,15 @@ export class MatchTeams {
     summary_body: string;
     team1: {
         name: string;
+        photo: string;
         players: [
             {
                 id: number;
                 photo: string;
                 name: string;
+                position: string;
                 goals: number;
+                shoots: number;
                 assists: number;
                 fouls: number;
                 score: number;
@@ -21,12 +24,15 @@ export class MatchTeams {
     };
     team2: {
         name: string;
+        photo: string;
         players: [
             {
                 id: number;
                 photo: string;
                 name: string;
+                position: string;
                 goals: number;
+                shoots: number;
                 assists: number;
                 fouls: number;
                 score: number;

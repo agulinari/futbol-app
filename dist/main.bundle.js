@@ -524,7 +524,7 @@ var MatchDetailComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/match-form/match-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Nuevo Partido</h2>\n<form class=\"form-horizontal form-label-left\" [formGroup]=\"matchForm\" novalidate>\n  <div class=\"well well-lg\">\n    <fieldset>\n      <div class=\"form-group row\">\n        <label class=\"col-form-label col-md-4\" for=\"tournament\">Torneo</label>\n\n        <div class=\"col-md-4\">\n          <input type=\"text\" formControlName=\"tournament\" id=\"tournament\" name=\"tournament\" class=\"form-control input-transparent\">\n        </div>\n      </div>\n      <div class=\"form-group row\">\n        <label class=\"col-form-label col-md-4\" for=\"place\">Lugar</label>\n\n        <div class=\"col-md-4\">\n          <input type=\"text\" formControlName=\"place\" id=\"place\" name=\"place\" class=\"form-control input-transparent\">\n        </div>\n      </div>\n      <div class=\"form-group row\">\n        <label class=\"col-form-label col-md-4\" for=\"date\">Fecha</label>\n\n        <div class=\"col-md-4\">\n          <input type=\"date\" formControlName=\"date\" id=\"date\" name=\"date\" class=\"form-control input-transparent\">\n        </div>\n      </div>\n    </fieldset>\n  </div>\n  <fieldset class=\"mt-md\">\n    <legend>Equipos\n      <small>Jugadores</small>\n    </legend>\n  </fieldset>\n  <div formGroupName=\"team1\" class=\"well well-lg\">\n    <div class=\"form-group row\">\n      <label class=\"col-form-label col-md-4\" for=\"tournament\">Equipo 1</label>\n\n      <div class=\"col-md-4\">\n        <input type=\"text\" formControlName=\"name\" id=\"name\" name=\"name\" class=\"form-control input-transparent\">\n      </div>\n    </div>\n    <div formGroupName=\"player1\">\n      <h4>Arquero</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team1.player1.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player2\">\n      <h4>Jugador 1</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team1.player2.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player3\">\n      <h4>Jugador 2</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team1.player3.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player4\">\n      <h4>Jugador 3</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team1.player4.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player5\">\n      <h4>Jugador 4</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team1.player5.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div formGroupName=\"team2\" class=\"well well-lg\">\n    <div class=\"form-group row\">\n      <label class=\"col-form-label col-md-4\" for=\"tournament\">Equipo 2</label>\n\n      <div class=\"col-md-4\">\n        <input type=\"text\" formControlName=\"name\" id=\"name\" name=\"name\" class=\"form-control input-transparent\">\n      </div>\n    </div>\n    <div formGroupName=\"player1\">\n      <h4>Arquero</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team2.player1.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player2\">\n      <h4>Jugador 1</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team2.player2.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player3\">\n      <h4>Jugador 2</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team2.player3.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player4\">\n      <h4>Jugador 3</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team2.player4.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player5\">\n      <h4>Jugador 4</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team2.player5.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n  </div>\n</form>\n<p>Form value: {{ matchForm.value | json }}</p>\n<p>Form status: {{ matchForm.status | json }}</p>\n<p>Players selected: {{ playersSelected | json }}</p>"
+module.exports = "<h2>Nuevo Partido</h2>\n<form class=\"form-horizontal form-label-left\" [formGroup]=\"matchForm\" novalidate>\n  <div class=\"well well-lg\">\n    <fieldset>\n      <div class=\"form-group row\">\n        <label class=\"col-form-label col-md-4\" for=\"tournament\">Torneo</label>\n\n        <div class=\"col-md-4\">\n          <input type=\"text\" formControlName=\"tournament\" id=\"tournament\" name=\"tournament\" class=\"form-control input-transparent\">\n        </div>\n      </div>\n      <div class=\"form-group row\">\n        <label class=\"col-form-label col-md-4\" for=\"place\">Lugar</label>\n\n        <div class=\"col-md-4\">\n          <input type=\"text\" formControlName=\"place\" id=\"place\" name=\"place\" class=\"form-control input-transparent\">\n        </div>\n      </div>\n      <div class=\"form-group row\">\n        <label class=\"col-form-label col-md-4\" for=\"date\">Fecha</label>\n\n        <div class=\"col-md-4\">\n          <input type=\"date\" formControlName=\"date\" id=\"date\" name=\"date\" class=\"form-control input-transparent\">\n        </div>\n      </div>\n    </fieldset>\n  </div>\n  <fieldset class=\"mt-md\">\n    <legend>Equipos\n      <small>Jugadores</small>\n    </legend>\n  </fieldset>\n  <div formGroupName=\"team1\" class=\"well well-lg\">\n    <div class=\"form-group row\">\n      <label class=\"col-form-label col-md-4\" for=\"tournament\">Equipo 1</label>\n\n      <div class=\"col-md-4\">\n        <input type=\"text\" formControlName=\"name\" id=\"name\" name=\"name\" class=\"form-control input-transparent\">\n      </div>\n    </div>\n    <div formGroupName=\"player1\">\n      <h4>Arquero</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team1.player1.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Disparos\n              <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"shoots\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player2\">\n      <h4>Jugador 1</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team1.player2.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Disparos\n              <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"shoots\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player3\">\n      <h4>Jugador 2</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team1.player3.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Disparos\n              <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"shoots\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player4\">\n      <h4>Jugador 3</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team1.player4.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Disparos\n              <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"shoots\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player5\">\n      <h4>Jugador 4</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team1.player5.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Disparos\n              <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"shoots\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div formGroupName=\"team2\" class=\"well well-lg\">\n    <div class=\"form-group row\">\n      <label class=\"col-form-label col-md-4\" for=\"tournament\">Equipo 2</label>\n\n      <div class=\"col-md-4\">\n        <input type=\"text\" formControlName=\"name\" id=\"name\" name=\"name\" class=\"form-control input-transparent\">\n      </div>\n    </div>\n    <div formGroupName=\"player1\">\n      <h4>Arquero</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team2.player1.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Disparos\n              <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"shoots\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player2\">\n      <h4>Jugador 1</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team2.player2.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Disparos\n              <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"shoots\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player3\">\n      <h4>Jugador 2</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team2.player3.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Disparos\n              <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"shoots\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Disparos\n              <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"shoots\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player4\">\n      <h4>Jugador 3</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team2.player4.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Disparos\n              <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"shoots\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n    <div formGroupName=\"player5\">\n      <h4>Jugador 4</h4>\n      <div class=\"row\">\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Nombre\n            <select class=\"form-control input-transparent\" formControlName=\"id\">\n              <option *ngFor=\"let player of players | filterPlayers:playersSelected:matchForm.get('team2.player5.id').value\" [value]=\"player.id\" [selected]=\"player.id == id\">{{player.nickname}}</option>\n            </select>\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Goles\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"goals\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n            <label class=\"center-block\"> Disparos\n              <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"shoots\">\n            </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Asistencias\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"assists\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Faltas\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"fouls\">\n          </label>\n        </div>\n        <div class=\"form-group\">\n          <label class=\"center-block\"> Puntaje\n            <input type=\"number\" class=\"form-control input-transparent\" formControlName=\"score\">\n          </label>\n        </div>\n      </div>\n    </div>\n  </div>\n  <button type=\"submit\" [disabled]=\"matchForm.pristine\" class=\"btn btn-success\">Guardar</button>\n</form>\n<p>Form value: {{ matchForm.value | json }}</p>\n<p>Form status: {{ matchForm.status | json }}</p>\n<p>Players selected: {{ playersSelected | json }}</p>"
 
 /***/ }),
 
@@ -554,6 +554,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__player_service__ = __webpack_require__("../../../../../src/app/player.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__match_service__ = __webpack_require__("../../../../../src/app/match.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -566,10 +567,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MatchFormComponent = /** @class */ (function () {
-    function MatchFormComponent(fb, playerService) {
+    function MatchFormComponent(fb, playerService, matchService) {
         this.fb = fb;
         this.playerService = playerService;
+        this.matchService = matchService;
         this.createForm();
         this.playersSelected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     }
@@ -623,10 +626,6 @@ var MatchFormComponent = /** @class */ (function () {
             _this.playersSelected = _this.playersSelected.slice();
         });
     };
-    MatchFormComponent.prototype.selectPlayer = function (index) {
-        var formModel = this.matchForm.value;
-        this.playersSelected[index] = formModel.team2.player1.id;
-    };
     MatchFormComponent.prototype.createForm = function () {
         this.matchForm = this.fb.group({
             tournament: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
@@ -634,9 +633,11 @@ var MatchFormComponent = /** @class */ (function () {
             date: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
             team1: this.fb.group({
                 name: ['Los amigos de Pato', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                photo: ['assets/img/2.png', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                 player1: this.fb.group({
                     id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    shoots: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
@@ -644,6 +645,7 @@ var MatchFormComponent = /** @class */ (function () {
                 player2: this.fb.group({
                     id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    shoots: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
@@ -651,6 +653,7 @@ var MatchFormComponent = /** @class */ (function () {
                 player3: this.fb.group({
                     id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    shoots: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
@@ -658,6 +661,7 @@ var MatchFormComponent = /** @class */ (function () {
                 player4: this.fb.group({
                     id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    shoots: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
@@ -665,6 +669,7 @@ var MatchFormComponent = /** @class */ (function () {
                 player5: this.fb.group({
                     id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    shoots: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
@@ -672,9 +677,11 @@ var MatchFormComponent = /** @class */ (function () {
             }),
             team2: this.fb.group({
                 name: ['Los amigos de Guille', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                photo: ['assets/img/13.png', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                 player1: this.fb.group({
                     id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    shoots: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
@@ -682,6 +689,7 @@ var MatchFormComponent = /** @class */ (function () {
                 player2: this.fb.group({
                     id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    shoots: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
@@ -689,6 +697,7 @@ var MatchFormComponent = /** @class */ (function () {
                 player3: this.fb.group({
                     id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    shoots: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
@@ -696,6 +705,7 @@ var MatchFormComponent = /** @class */ (function () {
                 player4: this.fb.group({
                     id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    shoots: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
@@ -703,6 +713,7 @@ var MatchFormComponent = /** @class */ (function () {
                 player5: this.fb.group({
                     id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+                    shoots: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     score: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
@@ -716,13 +727,151 @@ var MatchFormComponent = /** @class */ (function () {
         this.getPlayers();
         this.onChanges();
     };
+    MatchFormComponent.prototype.onSubmit = function () {
+        this.match = this.prepareSaveMatch();
+        this.matchService.postMatch(this.match).subscribe();
+    };
+    MatchFormComponent.prototype.prepareSaveMatch = function () {
+        var formModel = this.matchForm.value;
+        var saveMatch = {
+            id: 0,
+            date: formModel.date,
+            place: formModel.place,
+            tournament: formModel.tournament,
+            summary_title: formModel.summary_title,
+            summary_body: formModel.summary_body,
+            team1: {
+                name: formModel.team1.name,
+                photo: formModel.team1.photo,
+                players: [
+                    {
+                        id: formModel.team1.player1.id,
+                        photo: '',
+                        name: '',
+                        position: 'Arquero',
+                        goals: formModel.team1.player1.goals,
+                        shoots: formModel.team1.player1.shoots,
+                        assists: formModel.team1.player1.assists,
+                        fouls: formModel.team1.player1.fouls,
+                        score: formModel.team1.player1.score
+                    },
+                    {
+                        id: formModel.team1.player2.id,
+                        photo: '',
+                        name: '',
+                        position: 'Defensor',
+                        goals: formModel.team1.player2.goals,
+                        shoots: formModel.team1.player2.shoots,
+                        assists: formModel.team1.player2.assists,
+                        fouls: formModel.team1.player2.fouls,
+                        score: formModel.team1.player2.score
+                    },
+                    {
+                        id: formModel.team1.player3.id,
+                        photo: '',
+                        name: '',
+                        position: 'Defensor',
+                        goals: formModel.team1.player3.goals,
+                        shoots: formModel.team1.player3.shoots,
+                        assists: formModel.team1.player3.assists,
+                        fouls: formModel.team1.player3.fouls,
+                        score: formModel.team1.player3.score
+                    },
+                    {
+                        id: formModel.team1.player4.id,
+                        photo: '',
+                        name: '',
+                        position: 'Volante',
+                        goals: formModel.team1.player4.goals,
+                        shoots: formModel.team1.player4.shoots,
+                        assists: formModel.team1.player4.assists,
+                        fouls: formModel.team1.player4.fouls,
+                        score: formModel.team1.player4.score
+                    },
+                    {
+                        id: formModel.team1.player5.id,
+                        photo: '',
+                        name: '',
+                        position: 'Delantero',
+                        goals: formModel.team1.player5.goals,
+                        shoots: formModel.team1.player5.shoots,
+                        assists: formModel.team1.player5.assists,
+                        fouls: formModel.team1.player5.fouls,
+                        score: formModel.team1.player5.score
+                    }
+                ]
+            },
+            team2: {
+                name: formModel.team2.name,
+                photo: formModel.team2.photo,
+                players: [
+                    {
+                        id: formModel.team2.player1.id,
+                        photo: '',
+                        name: '',
+                        position: 'Arquero',
+                        goals: formModel.team2.player1.goals,
+                        shoots: formModel.team2.player1.shoots,
+                        assists: formModel.team2.player1.assists,
+                        fouls: formModel.team2.player1.fouls,
+                        score: formModel.team2.player1.score
+                    },
+                    {
+                        id: formModel.team2.player2.id,
+                        photo: '',
+                        name: '',
+                        position: 'Defensor',
+                        goals: formModel.team2.player2.goals,
+                        shoots: formModel.team2.player2.shoots,
+                        assists: formModel.team2.player2.assists,
+                        fouls: formModel.team2.player2.fouls,
+                        score: formModel.team2.player2.score
+                    },
+                    {
+                        id: formModel.team2.player3.id,
+                        photo: '',
+                        name: '',
+                        position: 'Defensor',
+                        goals: formModel.team2.player3.goals,
+                        shoots: formModel.team2.player3.shoots,
+                        assists: formModel.team2.player3.assists,
+                        fouls: formModel.team2.player3.fouls,
+                        score: formModel.team2.player3.score
+                    },
+                    {
+                        id: formModel.team2.player4.id,
+                        photo: '',
+                        name: '',
+                        position: 'Volante',
+                        goals: formModel.team2.player4.goals,
+                        shoots: formModel.team2.player4.shoots,
+                        assists: formModel.team2.player4.assists,
+                        fouls: formModel.team2.player4.fouls,
+                        score: formModel.team2.player4.score
+                    },
+                    {
+                        id: formModel.team2.player5.id,
+                        photo: '',
+                        name: '',
+                        position: 'Delantero',
+                        goals: formModel.team2.player5.goals,
+                        shoots: formModel.team2.player5.shoots,
+                        assists: formModel.team2.player5.assists,
+                        fouls: formModel.team2.player5.fouls,
+                        score: formModel.team2.player5.score
+                    }
+                ]
+            }
+        };
+        return saveMatch;
+    };
     MatchFormComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-match-form',
             template: __webpack_require__("../../../../../src/app/match-form/match-form.component.html"),
             styles: [__webpack_require__("../../../../../src/app/match-form/match-form.component.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_2__player_service__["a" /* PlayerService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_2__player_service__["a" /* PlayerService */], __WEBPACK_IMPORTED_MODULE_3__match_service__["a" /* MatchService */]])
     ], MatchFormComponent);
     return MatchFormComponent;
 }());
@@ -827,6 +976,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+var httpOptions = {
+    headers: new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({ 'Content-Type': 'application/json' })
+};
 var MatchService = /** @class */ (function () {
     function MatchService(http) {
         this.http = http;
@@ -836,7 +988,7 @@ var MatchService = /** @class */ (function () {
         return this.http.get(this.matchesUrl).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError('getMatches', [])));
     };
     MatchService.prototype.getMatchesByPlayer = function (player) {
-        var params = new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpParams */]().set('player', player);
+        var params = new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["d" /* HttpParams */]().set('player', player);
         return this.http.get(this.matchesUrl, { params: params }).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError('getMatches', [])));
     };
     MatchService.prototype.getMatch = function (id) {
@@ -850,6 +1002,9 @@ var MatchService = /** @class */ (function () {
     MatchService.prototype.getTeams = function (id) {
         var url = this.matchesUrl + "/" + id + "/teams";
         return this.http.get(url).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError("getTeams id=" + id)));
+    };
+    MatchService.prototype.postMatch = function (match) {
+        return this.http.post(this.matchesUrl, match, httpOptions).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError('addMatch')));
     };
     /**
  * Handle Http operation that failed.

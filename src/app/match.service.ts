@@ -7,6 +7,10 @@ import { MatchTeams } from './model/match-teams';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
+const httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
+
 @Injectable()
 export class MatchService {
 
@@ -46,6 +50,12 @@ export class MatchService {
         const url = `${this.matchesUrl}/${id}/teams`;
         return this.http.get<MatchTeams>(url).pipe(
             catchError(this.handleError<MatchTeams>(`getTeams id=${id}`))
+        );
+    }
+
+    postMatch(match: MatchTeams): Observable<MatchTeams> {
+        return this.http.post<MatchTeams>(this.matchesUrl, match, httpOptions).pipe(
+            catchError(this.handleError<MatchTeams>('addMatch'))
         );
     }
 

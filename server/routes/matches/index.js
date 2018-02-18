@@ -8,5 +8,6 @@ router.get('/', controller.index);
 router.get('/:id', controller.show);
 router.get('/:id/summary', controller.summary);
 router.get('/:id/teams', controller.teams);
+router.post('/', controller.create);
 // Export module
 module.exports = router;

@@ -1,5 +1,8 @@
 const { Pool, Client, Query } = require('pg')
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
 const connectionString = process.env.DATABASE_URL
+
 
 const pool = new Pool({
     connectionString: connectionString,

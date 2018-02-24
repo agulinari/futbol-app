@@ -261,7 +261,7 @@ exports.create = function (req, res) {
         
         try {
             await client.query('BEGIN')
-            const { rows } = await client.query('INSERT INTO matches (match_date, place, tournament, team1, team2, team1_photo, team2_photo, summary_title, summary_body) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id',
+            const { rows } = await client.query('INSERT INTO matches (match_date, place, tournament, team1, team2, team1_photo, team2_photo, summary_title, summary_body) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING match_id',
         [data.date, data.place, data.tournament, data.team1.name, data.team2.name, data.team1.photo, data.team2.photo, data.summary_title, data.summary_body]);
             const matchid = res.rows[0].match_id;
             const insertStatsTeam1Player1 = 'INSERT INTO stats (player_id, match_id, team, position, goals, shoots, fouls, assists, score) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)';

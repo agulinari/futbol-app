@@ -23,6 +23,18 @@
           <input type="date" formControlName="date" id="date" name="date" class="form-control input-transparent">
         </div>
       </div>
+      <div class="form-group row">
+        <label class="col-form-label col-md-4" for="summary_title">T&iacute;tulo</label>
+        <div class="col-md-4">
+          <input type="text" formControlName="summary_title" id="summary_title" name="summary_title" class="form-control input-transparent">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-form-label col-md-4" for="summary_body">Resumen</label>
+        <div class="col-md-4">
+          <textarea formControlName="summary_body" class="form-control input-transparent" id="summary_body" rows="10"></textarea>
+        </div>
+      </div>
     </fieldset>
   </div>
   <fieldset class="mt-md">
@@ -44,7 +56,8 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team1.player1.id').value" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team1.player1.id').value" [value]="player.id"
+                [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -54,9 +67,9 @@
           </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Disparos
-              <input type="number" class="form-control input-transparent" formControlName="shoots">
-            </label>
+          <label class="center-block"> Disparos
+            <input type="number" class="form-control input-transparent" formControlName="shoots">
+          </label>
         </div>
         <div class="form-group">
           <label class="center-block"> Asistencias
@@ -81,7 +94,8 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team1.player2.id').value" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team1.player2.id').value" [value]="player.id"
+                [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -91,9 +105,9 @@
           </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Disparos
-              <input type="number" class="form-control input-transparent" formControlName="shoots">
-            </label>
+          <label class="center-block"> Disparos
+            <input type="number" class="form-control input-transparent" formControlName="shoots">
+          </label>
         </div>
         <div class="form-group">
           <label class="center-block"> Asistencias
@@ -118,7 +132,8 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team1.player3.id').value" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team1.player3.id').value" [value]="player.id"
+                [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -128,9 +143,9 @@
           </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Disparos
-              <input type="number" class="form-control input-transparent" formControlName="shoots">
-            </label>
+          <label class="center-block"> Disparos
+            <input type="number" class="form-control input-transparent" formControlName="shoots">
+          </label>
         </div>
         <div class="form-group">
           <label class="center-block"> Asistencias
@@ -155,7 +170,8 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team1.player4.id').value" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team1.player4.id').value" [value]="player.id"
+                [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -165,9 +181,9 @@
           </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Disparos
-              <input type="number" class="form-control input-transparent" formControlName="shoots">
-            </label>
+          <label class="center-block"> Disparos
+            <input type="number" class="form-control input-transparent" formControlName="shoots">
+          </label>
         </div>
         <div class="form-group">
           <label class="center-block"> Asistencias
@@ -192,7 +208,8 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team1.player5.id').value" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team1.player5.id').value" [value]="player.id"
+                [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -202,9 +219,9 @@
           </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Disparos
-              <input type="number" class="form-control input-transparent" formControlName="shoots">
-            </label>
+          <label class="center-block"> Disparos
+            <input type="number" class="form-control input-transparent" formControlName="shoots">
+          </label>
         </div>
         <div class="form-group">
           <label class="center-block"> Asistencias
@@ -238,7 +255,8 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team2.player1.id').value" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team2.player1.id').value" [value]="player.id"
+                [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -248,9 +266,9 @@
           </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Disparos
-              <input type="number" class="form-control input-transparent" formControlName="shoots">
-            </label>
+          <label class="center-block"> Disparos
+            <input type="number" class="form-control input-transparent" formControlName="shoots">
+          </label>
         </div>
         <div class="form-group">
           <label class="center-block"> Asistencias
@@ -275,7 +293,8 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team2.player2.id').value" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team2.player2.id').value" [value]="player.id"
+                [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -285,9 +304,9 @@
           </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Disparos
-              <input type="number" class="form-control input-transparent" formControlName="shoots">
-            </label>
+          <label class="center-block"> Disparos
+            <input type="number" class="form-control input-transparent" formControlName="shoots">
+          </label>
         </div>
         <div class="form-group">
           <label class="center-block"> Asistencias
@@ -312,7 +331,8 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team2.player3.id').value" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team2.player3.id').value" [value]="player.id"
+                [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -322,14 +342,9 @@
           </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Disparos
-              <input type="number" class="form-control input-transparent" formControlName="shoots">
-            </label>
-        </div>
-        <div class="form-group">
-            <label class="center-block"> Disparos
-              <input type="number" class="form-control input-transparent" formControlName="shoots">
-            </label>
+          <label class="center-block"> Disparos
+            <input type="number" class="form-control input-transparent" formControlName="shoots">
+          </label>
         </div>
         <div class="form-group">
           <label class="center-block"> Asistencias
@@ -354,7 +369,8 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team2.player4.id').value" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team2.player4.id').value" [value]="player.id"
+                [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -364,9 +380,9 @@
           </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Disparos
-              <input type="number" class="form-control input-transparent" formControlName="shoots">
-            </label>
+          <label class="center-block"> Disparos
+            <input type="number" class="form-control input-transparent" formControlName="shoots">
+          </label>
         </div>
         <div class="form-group">
           <label class="center-block"> Asistencias
@@ -391,7 +407,8 @@
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
-              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team2.player5.id').value" [value]="player.id" [selected]="player.id == id">{{player.nickname}}</option>
+              <option *ngFor="let player of players | filterPlayers:playersSelected:matchForm.get('team2.player5.id').value" [value]="player.id"
+                [selected]="player.id == id">{{player.nickname}}</option>
             </select>
           </label>
         </div>
@@ -401,9 +418,9 @@
           </label>
         </div>
         <div class="form-group">
-            <label class="center-block"> Disparos
-              <input type="number" class="form-control input-transparent" formControlName="shoots">
-            </label>
+          <label class="center-block"> Disparos
+            <input type="number" class="form-control input-transparent" formControlName="shoots">
+          </label>
         </div>
         <div class="form-group">
           <label class="center-block"> Asistencias

@@ -72,7 +72,9 @@ INSERT INTO players (nickname, first_name, last_name, player_height, player_weig
 INSERT INTO players (nickname, first_name, last_name, player_height, player_weight, player_photo, player_position, birth_date)
     VALUES ('El Gato', 'Santiago', 'Francescoli', 178, 85, 'assets/img/15.png', 'Arquero', '1983-01-13');
 INSERT INTO players (nickname, first_name, last_name, player_height, player_weight, player_photo, player_position, birth_date)
-    VALUES ('', 'Amigo', 'De Acu', 190, 85, 'assets/img/15.png', 'Volante', '1990-01-01');
+    VALUES ('Petu', 'Petu', 'Petu', 190, 85, 'assets/img/15.png', 'Volante', '1990-01-01');
+INSERT INTO players (nickname, first_name, last_name, player_height, player_weight, player_photo, player_position, birth_date)
+    VALUES ('Nacho', 'Ignacio', 'Espino', 165, 67, 'assets/img/14.png', 'Delantero', '1984-04-10');
 
 
 INSERT INTO matches (match_date, place, tournament, team1, team2, team1_photo, team2_photo, summary_title, summary_body)

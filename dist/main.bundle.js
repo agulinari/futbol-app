@@ -536,7 +536,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "input.parsley-error {\n  border-color: theme-color(\"danger\"); }\n\n.error-msg {\n  display: block;\n  position: absolute;\n  font-size: 75%;\n  bottom: -2em; }\n", ""]);
+exports.push([module.i, "input.parsley-error {\n  border-color: theme-color(\"danger\"); }\n", ""]);
 
 // exports
 

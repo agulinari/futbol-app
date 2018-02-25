@@ -38,13 +38,12 @@
     </fieldset>
   </div>
   <fieldset class="mt-md">
-    <legend>Equipos
-      <small>Jugadores</small>
+    <legend>Equipo 1
     </legend>
   </fieldset>
-  <div formGroupName="team1" class="well well-lg">
+  <div formGroupName="team1">
     <div class="form-group row">
-      <label class="col-form-label col-md-4" for="tournament">Equipo 1</label>
+      <label class="col-form-label col-md-4" for="tournament">Nombre</label>
 
       <div class="col-md-4">
         <input type="text" formControlName="name" id="name" name="name" class="form-control input-transparent">
@@ -52,7 +51,7 @@
     </div>
     <div formGroupName="player1">
       <h4>Arquero</h4>
-      <div class="row">
+      <div class="row well well-lg">
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
@@ -90,7 +89,7 @@
     </div>
     <div formGroupName="player2">
       <h4>Jugador 1</h4>
-      <div class="row">
+      <div class="row well well-lg">
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
@@ -128,7 +127,7 @@
     </div>
     <div formGroupName="player3">
       <h4>Jugador 2</h4>
-      <div class="row">
+      <div class="row well well-lg">
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
@@ -166,7 +165,7 @@
     </div>
     <div formGroupName="player4">
       <h4>Jugador 3</h4>
-      <div class="row">
+      <div class="row well well-lg">
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
@@ -204,7 +203,7 @@
     </div>
     <div formGroupName="player5">
       <h4>Jugador 4</h4>
-      <div class="row">
+      <div class="row well well-lg">
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
@@ -241,9 +240,13 @@
       </div>
     </div>
   </div>
-  <div formGroupName="team2" class="well well-lg">
+  <fieldset class="mt-md">
+    <legend>Equipo 2
+    </legend>
+  </fieldset>
+  <div formGroupName="team2">
     <div class="form-group row">
-      <label class="col-form-label col-md-4" for="tournament">Equipo 2</label>
+      <label class="col-form-label col-md-4" for="tournament">Nombre</label>
 
       <div class="col-md-4">
         <input type="text" formControlName="name" id="name" name="name" class="form-control input-transparent">
@@ -251,7 +254,7 @@
     </div>
     <div formGroupName="player1">
       <h4>Arquero</h4>
-      <div class="row">
+      <div class="row well well-lg">
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
@@ -289,7 +292,7 @@
     </div>
     <div formGroupName="player2">
       <h4>Jugador 1</h4>
-      <div class="row">
+      <div class="row well well-lg">
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
@@ -327,7 +330,7 @@
     </div>
     <div formGroupName="player3">
       <h4>Jugador 2</h4>
-      <div class="row">
+      <div class="row well well-lg">
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
@@ -365,7 +368,7 @@
     </div>
     <div formGroupName="player4">
       <h4>Jugador 3</h4>
-      <div class="row">
+      <div class="row well well-lg">
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">
@@ -403,7 +406,7 @@
     </div>
     <div formGroupName="player5">
       <h4>Jugador 4</h4>
-      <div class="row">
+      <div class="row well well-lg">
         <div class="form-group">
           <label class="center-block"> Nombre
             <select class="form-control input-transparent" formControlName="id">

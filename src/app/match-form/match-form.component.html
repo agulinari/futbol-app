@@ -266,8 +266,8 @@
         <div class="form-group">
           <label class="center-block"> Goles
             <input type="number" class="form-control input-transparent" formControlName="goals">
-            <div *ngIf="player1.controls.goals.invalid && (player1.controls.goals.dirty || player1.controls.goals.touched)" class="alert alert-danger">
-              <div *ngIf="goals.errors.required">
+            <div *ngIf="matchForm.get('team2.player1.goals').invalid && (matchForm.get('team2.player1.goals').dirty || matchForm.get('team2.player1.goals').touched)" class="alert alert-danger">
+              <div *ngIf="matchForm.get('team2.player1.goals').errors.required">
                 Campo requerido
               </div>
             </div>

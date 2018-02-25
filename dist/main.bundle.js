@@ -680,7 +680,7 @@ var MatchFormComponent = /** @class */ (function () {
                 photo: ['assets/img/13.png', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                 player1: this.fb.group({
                     id: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
-                    goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].min(0), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].max(50)],
+                    goals: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].min(0), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].max(50)])],
                     shoots: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     assists: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
                     fouls: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],

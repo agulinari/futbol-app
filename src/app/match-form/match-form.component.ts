@@ -126,7 +126,7 @@ export class MatchFormComponent implements OnInit {
         photo: ['assets/img/13.png', Validators.required],
         player1: this.fb.group({
           id: ['', Validators.required],
-          goals: [0, Validators.required, Validators.min(0), Validators.max(50)],
+          goals: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
           shoots: [0, Validators.required],
           assists: [0, Validators.required],
           fouls: [0, Validators.required],

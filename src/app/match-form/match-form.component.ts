@@ -127,10 +127,10 @@ export class MatchFormComponent implements OnInit {
         player1: this.fb.group({
           id: ['', Validators.required],
           goals: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
-          shoots: [0, Validators.required],
-          assists: [0, Validators.required],
-          fouls: [0, Validators.required],
-          score: [0, Validators.required]
+          shoots: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          assists: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          fouls: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          score: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(10)])]
         }),
         player2: this.fb.group({
           id: ['', Validators.required],

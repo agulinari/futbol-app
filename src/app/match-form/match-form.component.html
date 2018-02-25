@@ -454,7 +454,7 @@
       </div>
     </div>
   </div>
-  <button type="submit" [disabled]="matchForm.pristine" class="btn btn-success">Guardar</button>
+  <button type="submit" [disabled]="matchForm.invalid" class="btn btn-success">Guardar</button>
 </form>
 <p>Form value: {{ matchForm.value | json }}</p>
 <p>Form status: {{ matchForm.status | json }}</p>

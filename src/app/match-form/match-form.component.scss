@@ -1,6 +1,9 @@
-.error {
-  color: red;
+
+
+input.parsley-error{
+    border-color: theme-color('danger');
 }
+
 .error-msg {
   display: block;
   position: absolute;

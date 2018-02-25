@@ -266,9 +266,15 @@
         <div class="form-group">
           <label class="center-block"> Goles
             <input type="number" class="form-control input-transparent" [ngClass]="{'parsley-error' : matchForm.get('team2.player1.goals').invalid && (matchForm.get('team2.player1.goals').dirty || matchForm.get('team2.player1.goals').touched) }" formControlName="goals">
-            <div *ngIf="matchForm.get('team2.player1.goals').invalid && (matchForm.get('team2.player1.goals').dirty || matchForm.get('team2.player1.goals').touched)" class="error-msg">
-              <div *ngIf="matchForm.get('team2.player1.goals').errors.required">
-                Campo requerido
+            <div *ngIf="matchForm.get('team2.player1.goals').invalid && (matchForm.get('team2.player1.goals').dirty || matchForm.get('team2.player1.goals').touched)">
+              <div *ngIf="matchForm.get('team2.player1.goals').errors.required" class="text-warning">
+                <small>Campo requerido</small>
+              </div>
+              <div *ngIf="matchForm.get('team2.player1.goals').errors.min" class="text-warning">
+                <small>Valor inv&aacute;lido</small>
+              </div>
+              <div *ngIf="matchForm.get('team2.player1.goals').errors.max" class="text-warning">
+                <small>Valor inv&aacute;lido</small>
               </div>
             </div>
           </label>

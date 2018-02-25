@@ -74,51 +74,51 @@ export class MatchFormComponent implements OnInit {
 
   createForm() {
     this.matchForm = this.fb.group({
-      tournament: ['', Validators.required],
-      place: ['', Validators.required],
+      tournament: ['',  Validators.compose([Validators.required, Validators.maxLength(30)])],
+      place: ['', Validators.compose([Validators.required, Validators.maxLength(30)])],
       date: ['', Validators.required],
       team1: this.fb.group({
         name: ['Los amigos de Pato', Validators.required],
         photo: ['assets/img/2.png', Validators.required],
         player1: this.fb.group({
           id: ['', Validators.required],
-          goals: [0, Validators.required],
-          shoots: [0, Validators.required],
-          assists: [0, Validators.required],
-          fouls: [0, Validators.required],
-          score: [0, Validators.required]
+          goals: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          shoots: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          assists: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          fouls: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          score: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(10)])]
         }),
         player2: this.fb.group({
           id: ['', Validators.required],
-          goals: [0, Validators.required],
-          shoots: [0, Validators.required],
-          assists: [0, Validators.required],
-          fouls: [0, Validators.required],
-          score: [0, Validators.required]
+          goals: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          shoots: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          assists: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          fouls: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          score: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(10)])]
         }),
         player3: this.fb.group({
           id: ['', Validators.required],
-          goals: [0, Validators.required],
-          shoots: [0, Validators.required],
-          assists: [0, Validators.required],
-          fouls: [0, Validators.required],
-          score: [0, Validators.required]
+          goals: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          shoots: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          assists: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          fouls: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          score: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(10)])]
         }),
         player4: this.fb.group({
           id: ['', Validators.required],
-          goals: [0, Validators.required],
-          shoots: [0, Validators.required],
-          assists: [0, Validators.required],
-          fouls: [0, Validators.required],
-          score: [0, Validators.required]
+          goals: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          shoots: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          assists: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          fouls: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          score: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(10)])]
         }),
         player5: this.fb.group({
           id: ['', Validators.required],
-          goals: [0, Validators.required],
-          shoots: [0, Validators.required],
-          assists: [0, Validators.required],
-          fouls: [0, Validators.required],
-          score: [0, Validators.required]
+          goals: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          shoots: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          assists: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          fouls: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          score: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(10)])]
         })
       }),
       team2: this.fb.group({
@@ -134,39 +134,39 @@ export class MatchFormComponent implements OnInit {
         }),
         player2: this.fb.group({
           id: ['', Validators.required],
-          goals: [0, Validators.required],
-          shoots: [0, Validators.required],
-          assists: [0, Validators.required],
-          fouls: [0, Validators.required],
-          score: [0, Validators.required]
+          goals: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          shoots: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          assists: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          fouls: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          score: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(10)])]
         }),
         player3: this.fb.group({
           id: ['', Validators.required],
-          goals: [0, Validators.required],
-          shoots: [0, Validators.required],
-          assists: [0, Validators.required],
-          fouls: [0, Validators.required],
-          score: [0, Validators.required]
+          goals: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          shoots: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          assists: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          fouls: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          score: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(10)])]
         }),
         player4: this.fb.group({
           id: ['', Validators.required],
-          goals: [0, Validators.required],
-          shoots: [0, Validators.required],
-          assists: [0, Validators.required],
-          fouls: [0, Validators.required],
-          score: [0, Validators.required]
+          goals: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          shoots: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          assists: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          fouls: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          score: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(10)])]
         }),
         player5: this.fb.group({
           id: ['', Validators.required],
-          goals: [0, Validators.required],
-          shoots: [0, Validators.required],
-          assists: [0, Validators.required],
-          fouls: [0, Validators.required],
-          score: [0, Validators.required]
+          goals: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          shoots: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          assists: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          fouls: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(50)])],
+          score: [0, Validators.compose([Validators.required, Validators.min(0), Validators.max(10)])]
         })
       }),
-      summaryTitle: ['', Validators.required],
-      summaryBody: ['', Validators.required]
+      summaryTitle: ['',  Validators.compose([Validators.required, Validators.maxLength(30)])],
+      summaryBody: ['',  Validators.compose([Validators.required, Validators.maxLength(1000)])]
     });
   }
 

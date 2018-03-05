@@ -57,6 +57,28 @@ exports.show = function (req, res) {
         });
     });
 };
+
+exports.create = function (req, res) {
+    const data = req.body;
+    // Get a Postgres client from the connection pool
+    pool.connect((err, client, done) => {
+        // Handle connection errors
+        if (err) {
+            done();
+            console.log(err);
+            return res.status(500).json({ success: false, data: err });
+        }
+        client.query('INSERT INTO players(nickname, first_name, last_name, player_height, player_weight, player_position, player_photo, birth_date ) VALUES($1, $2, $3, $4, $5, $6, $7, $8) returning id', [data.nickname, data.firstname, data.lastname, data.height, data.weight, data.position, data.photo, data.dateofbirth], function(err, result) {
+            done();
+            if(err) {
+              return res.status(500).json({ success: false, data: err });
+            }
+            data.id = result;
+            return res.status(201).json(data);
+        });
+    });
+}
+
 // Get a single player stats
 exports.stats = function (req, res) {
     let id = req.params.id;

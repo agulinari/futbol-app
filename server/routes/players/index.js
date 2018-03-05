@@ -8,5 +8,7 @@ router.get('/', controller.index);
 router.get('/:id', controller.show);
 router.get('/:id/stats', controller.stats);
 router.get('/:id/evolution', controller.evolution);
+router.post('/', controller.create);
+
 // Export module
 module.exports = router;

@@ -29,6 +29,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matches_matches_component__ = __webpack_require__("../../../../../src/app/matches/matches.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__match_detail_match_detail_component__ = __webpack_require__("../../../../../src/app/match-detail/match-detail.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__match_form_match_form_component__ = __webpack_require__("../../../../../src/app/match-form/match-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__player_form_player_form_component__ = __webpack_require__("../../../../../src/app/player-form/player-form.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -42,9 +43,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: '', redirectTo: '/players', pathMatch: 'full' },
     { path: 'players', component: __WEBPACK_IMPORTED_MODULE_2__players_players_component__["a" /* PlayersComponent */] },
+    { path: 'players/new', component: __WEBPACK_IMPORTED_MODULE_7__player_form_player_form_component__["a" /* PlayerFormComponent */] },
     { path: 'player/:id', component: __WEBPACK_IMPORTED_MODULE_3__player_detail_player_detail_component__["a" /* PlayerDetailComponent */] },
     { path: 'matches', component: __WEBPACK_IMPORTED_MODULE_4__matches_matches_component__["a" /* MatchesComponent */] },
     { path: 'match/:id', component: __WEBPACK_IMPORTED_MODULE_5__match_detail_match_detail_component__["a" /* MatchDetailComponent */] },
@@ -1306,7 +1309,7 @@ var PlayerDetailComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/player-form/player-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  player-form works!\n</p>\n"
+module.exports = "<h2>Nuevo Jugador</h2>\n<form class=\"form-horizontal form-label-left\" [formGroup]=\"playerForm\" (ngSubmit)=\"onSubmit()\" novalidate>\n  <div class=\"well well-lg\">\n    <fieldset>\n      <div class=\"form-group row\">\n        <label class=\"col-form-label col-md-4\" for=\"nickname\">Apodo</label>\n\n        <div class=\"col-md-4\">\n          <input type=\"text\" maxlength=\"30\" formControlName=\"nickname\" id=\"nickname\" name=\"nickname\" class=\"form-control input-transparent\" [ngClass]=\"{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }\">\n        </div>\n        <div *ngIf=\"playerForm.get('nickname').invalid && (playerForm.get('nickname').dirty || playerForm.get('nickname').touched)\">\n            <div *ngIf=\"playerForm.get('nickname').errors.required\" class=\"col-md-4 text-warning\">\n              <small>Campo requerido</small>\n            </div>\n        </div>\n      </div>\n      <div class=\"form-group row\">\n        <label class=\"col-form-label col-md-4\" for=\"firstname\">Nombre</label>\n\n        <div class=\"col-md-4\">\n          <input type=\"text\" maxlength=\"30\" formControlName=\"firstname\" id=\"firstname\" name=\"firstname\" class=\"form-control input-transparent\" [ngClass]=\"{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }\">\n        </div>\n        <div *ngIf=\"playerForm.get('firstname').invalid && (playerForm.get('firstname').dirty || playerForm.get('firstname').touched)\">\n            <div *ngIf=\"playerForm.get('firstname').errors.required\" class=\"col-md-4 text-warning\">\n              <small>Campo requerido</small>\n            </div>\n        </div>\n      </div>\n      <div class=\"form-group row\">\n          <label class=\"col-form-label col-md-4\" for=\"lastname\">Apellido</label>\n  \n          <div class=\"col-md-4\">\n            <input type=\"text\" maxlength=\"30\" formControlName=\"lastname\" id=\"lastname\" name=\"lastname\" class=\"form-control input-transparent\" [ngClass]=\"{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }\">\n          </div>\n          <div *ngIf=\"playerForm.get('lastname').invalid && (playerForm.get('lastname').dirty || playerForm.get('lastname').touched)\">\n              <div *ngIf=\"playerForm.get('lastname').errors.required\" class=\"col-md-4 text-warning\">\n                <small>Campo requerido</small>\n              </div>\n          </div>\n      </div>\n      <div class=\"form-group row\">\n        <label class=\"col-form-label col-md-4\" for=\"birthdate\">Fecha Nacimiento</label>\n\n        <div class=\"col-md-4\">\n          <input type=\"date\" formControlName=\"birthdate\" id=\"birthdate\" name=\"birthdate\" class=\"form-control input-transparent\" [ngClass]=\"{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }\">\n        </div>\n        <div *ngIf=\"playerForm.get('birthdate').invalid && (playerForm.get('birthdate').dirty || playerForm.get('birthdate').touched)\">\n            <div *ngIf=\"playerForm.get('birthdate').errors.required\" class=\"col-md-4 text-warning\">\n              <small>Campo requerido</small>\n            </div>\n        </div>\n      </div>\n      <div class=\"form-group row\">\n          <label class=\"col-form-label col-md-4\" for=\"height\">Altura</label>\n  \n          <div class=\"col-md-4\">\n            <input type=\"number\" formControlName=\"height\" id=\"height\" name=\"height\" class=\"form-control input-transparent\" [ngClass]=\"{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }\">\n          </div>\n          <div *ngIf=\"playerForm.get('height').invalid && (playerForm.get('height').dirty || playerForm.get('height').touched)\">\n              <div *ngIf=\"playerForm.get('height').errors.required\" class=\"col-md-4 text-warning\">\n                <small>Campo requerido</small>\n              </div>\n              <div *ngIf=\"matchForm.get('height').errors.min\" class=\"col-md-4 text-warning\">\n                <small>Valor inv&aacute;lido</small>\n              </div>\n              <div *ngIf=\"matchForm.get('height').errors.max\" class=\"col-md-4 text-warning\">\n                <small>Valor inv&aacute;lido</small>\n              </div>\n          </div>\n      </div>\n      <div class=\"form-group row\">\n          <label class=\"col-form-label col-md-4\" for=\"weight\">Peso</label>\n    \n          <div class=\"col-md-4\">\n            <input type=\"number\" formControlName=\"weight\" id=\"weight\" name=\"weight\" class=\"form-control input-transparent\" [ngClass]=\"{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }\">\n          </div>\n          <div *ngIf=\"playerForm.get('weight').invalid && (playerForm.get('weight').dirty || playerForm.get('weight').touched)\">\n              <div *ngIf=\"playerForm.get('weight').errors.required\" class=\"col-md-4 text-warning\">\n                <small>Campo requerido</small>\n              </div>\n              <div *ngIf=\"matchForm.get('weight').errors.min\" class=\"col-md-4 text-warning\">\n                <small>Valor inv&aacute;lido</small>\n              </div>\n              <div *ngIf=\"matchForm.get('weight').errors.max\" class=\"col-md-4 text-warning\">\n                <small>Valor inv&aacute;lido</small>\n              </div>\n          </div>\n      </div>\n      <div class=\"form-group row\">\n          <label class=\"col-form-label col-md-4\" for=\"position\">Posici&oacute;n</label>\n    \n          <div class=\"col-md-4\">\n            <input type=\"text\" formControlName=\"position\" id=\"position\" name=\"position\" class=\"form-control input-transparent\" [ngClass]=\"{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }\">\n          </div>\n          <div *ngIf=\"playerForm.get('position').invalid && (playerForm.get('position').dirty || playerForm.get('position').touched)\">\n              <div *ngIf=\"playerForm.get('position').errors.required\" class=\"col-md-4 text-warning\">\n                <small>Campo requerido</small>\n              </div>\n          </div>\n      </div>\n      <div class=\"form-group row\">\n          <label class=\"col-form-label col-md-4\" for=\"photo\">Foto</label>\n    \n          <div class=\"col-md-4\">\n            <input type=\"text\" formControlName=\"photo\" id=\"photo\" name=\"photo\" class=\"form-control input-transparent\" [ngClass]=\"{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }\">\n          </div>\n          <div *ngIf=\"playerForm.get('photo').invalid && (playerForm.get('photo').dirty || playerForm.get('photo').touched)\">\n              <div *ngIf=\"playerForm.get('photo').errors.required\" class=\"col-md-4 text-warning\">\n                <small>Campo requerido</small>\n              </div>\n          </div>\n      </div>\n    </fieldset>\n  </div>\n  <button type=\"submit\" [disabled]=\"playerForm.invalid\" class=\"btn btn-success\">Guardar</button>\n</form>\n<p>Form value: {{ playerForm.value | json }}</p>\n<p>Form status: {{ playerForm.status | json }}</p>\n"
 
 /***/ }),
 
@@ -1334,6 +1337,8 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlayerFormComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__player_service__ = __webpack_require__("../../../../../src/app/player.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1344,10 +1349,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var PlayerFormComponent = /** @class */ (function () {
-    function PlayerFormComponent() {
+    function PlayerFormComponent(fb, playerService) {
+        this.fb = fb;
+        this.playerService = playerService;
+        this.createForm();
     }
     PlayerFormComponent.prototype.ngOnInit = function () {
+    };
+    PlayerFormComponent.prototype.createForm = function () {
+        this.playerForm = this.fb.group({
+            nickname: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].maxLength(30)])],
+            firstname: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].maxLength(30)])],
+            lastname: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].maxLength(30)])],
+            birthdate: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required],
+            position: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].maxLength(30)])],
+            weight: [75, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].min(20), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].max(150)])],
+            height: [180, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].min(100), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].max(250)])],
+            photo: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].maxLength(30)])]
+        });
+    };
+    PlayerFormComponent.prototype.onSubmit = function () {
+        this.player = this.prepareSavePlayer();
+        this.playerService.postPlayer(this.player).subscribe();
+    };
+    PlayerFormComponent.prototype.prepareSavePlayer = function () {
+        var formModel = this.playerForm.value;
+        var savePlayer = {
+            id: 0,
+            photo: formModel.photo,
+            nickname: formModel.nickname,
+            firstname: formModel.firstname,
+            lastname: formModel.lastname,
+            dateofbirth: formModel.birthdate,
+            position: formModel.position,
+            height: formModel.height,
+            weight: formModel.weight
+        };
+        return savePlayer;
     };
     PlayerFormComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1355,7 +1396,7 @@ var PlayerFormComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/player-form/player-form.component.html"),
             styles: [__webpack_require__("../../../../../src/app/player-form/player-form.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_2__player_service__["a" /* PlayerService */]])
     ], PlayerFormComponent);
     return PlayerFormComponent;
 }());
@@ -1513,6 +1554,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+var httpOptions = {
+    headers: new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({ 'Content-Type': 'application/json' })
+};
 var PlayerService = /** @class */ (function () {
     function PlayerService(http) {
         this.http = http;
@@ -1525,6 +1569,9 @@ var PlayerService = /** @class */ (function () {
     PlayerService.prototype.getPlayer = function (id) {
         var url = this.playersUrl + "/" + id;
         return this.http.get(url).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError("getPlayer id=" + id)));
+    };
+    PlayerService.prototype.postPlayer = function (player) {
+        return this.http.post(this.playersUrl, player, httpOptions).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError('addPlayer')));
     };
     PlayerService.prototype.getStats = function (id) {
         var url = this.playersUrl + "/" + id + "/stats";

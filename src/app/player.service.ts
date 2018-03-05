@@ -7,6 +7,11 @@ import { PlayerEvolution } from './model/player-evolution';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
+
+
 @Injectable()
 export class PlayerService {
 
@@ -25,6 +30,12 @@ export class PlayerService {
     const url = `${this.playersUrl}/${id}`;
     return this.http.get<Player>(url).pipe(
       catchError(this.handleError<Player>(`getPlayer id=${id}`))
+    );
+  }
+
+  postPlayer(player: Player): Observable<Player> {
+    return this.http.post<Player>(this.playersUrl, player, httpOptions).pipe(
+        catchError(this.handleError<Player>('addPlayer'))
     );
   }
 

@@ -68,7 +68,7 @@ exports.create = function (req, res) {
             console.log(err);
             return res.status(500).json({ success: false, data: err });
         }
-        client.query('INSERT INTO players(nickname, first_name, last_name, player_height, player_weight, player_position, player_photo, birth_date ) VALUES($1, $2, $3, $4, $5, $6, $7, $8) returning id', [data.nickname, data.firstname, data.lastname, data.height, data.weight, data.position, data.photo, data.dateofbirth], function(err, result) {
+        client.query('INSERT INTO players(nickname, first_name, last_name, player_height, player_weight, player_position, player_photo, birth_date ) VALUES($1, $2, $3, $4, $5, $6, $7, $8) returning player_id', [data.nickname, data.firstname, data.lastname, data.height, data.weight, data.position, data.photo, data.dateofbirth], function(err, result) {
             done();
             if(err) {
               return res.status(500).json({ success: false, data: err });

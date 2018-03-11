@@ -6,10 +6,10 @@
         <label class="col-form-label col-md-4" for="nickname">Apodo</label>
 
         <div class="col-md-4">
-          <input type="text" maxlength="30" formControlName="nickname" id="nickname" name="nickname" class="form-control input-transparent" [ngClass]="{'parsley-error' : nickname?.invalid && (nickname?.dirty || nickname?.touched) }">
+          <input type="text" maxlength="30" formControlName="nickname" id="nickname" name="nickname" class="form-control input-transparent" [ngClass]="{'parsley-error' : playerForm.controls.nickname.invalid && (playerForm.controls.nickname.dirty || playerForm.controls.nickname.touched) }">
         </div>
-        <div *ngIf="nickname?.invalid && (nickname?.dirty || nickname?.touched)">
-            <div *ngIf="nickname?.errors.required" class="col-md-4 text-warning">
+        <div *ngIf="playerForm.controls.nickname.invalid && (playerForm.controls.nickname.dirty || playerForm.controls.nickname.touched)">
+            <div *ngIf="playerForm.controls.nickname.errors.required" class="col-md-4 text-warning">
               <small>Campo requerido</small>
             </div>
         </div>

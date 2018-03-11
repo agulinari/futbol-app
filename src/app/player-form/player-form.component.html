@@ -6,7 +6,7 @@
         <label class="col-form-label col-md-4" for="nickname">Apodo</label>
 
         <div class="col-md-4">
-          <input type="text" maxlength="30" formControlName="nickname" id="nickname" name="nickname" class="form-control input-transparent" [ngClass]="{'parsley-error' : nickname.invalid && (nickname.dirty || nickname.touched) }">
+          <input type="text" maxlength="30" formControlName="nickname" id="nickname" name="nickname" class="form-control input-transparent" >
         </div>
         <div *ngIf="nickname.invalid && (nickname.dirty || nickname.touched)">
             <div *ngIf="nickname.errors.required" class="col-md-4 text-warning">
@@ -18,7 +18,7 @@
         <label class="col-form-label col-md-4" for="firstname">Nombre</label>
 
         <div class="col-md-4">
-          <input type="text" maxlength="30" formControlName="firstname" id="firstname" name="firstname" class="form-control input-transparent" [ngClass]="{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }">
+          <input type="text" maxlength="30" formControlName="firstname" id="firstname" name="firstname" class="form-control input-transparent" >
         </div>
         <div *ngIf="playerForm.get('firstname').invalid && (playerForm.get('firstname').dirty || playerForm.get('firstname').touched)">
             <div *ngIf="playerForm.get('firstname').errors.required" class="col-md-4 text-warning">

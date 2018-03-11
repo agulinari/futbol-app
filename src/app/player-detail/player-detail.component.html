@@ -1,7 +1,8 @@
 <div *ngIf="player">
 <h2 class="page-title">Informaci&oacute;n del Jugador
 </h2>
-  <div class="row col-lg-6">
+<div class="row">
+  <div class="col-lg-6">
     <section widget class="widget">
       <header>
         <h4>
@@ -71,10 +72,17 @@
         </form>
       </div>
     </section>
-  <app-player-detail-stats></app-player-detail-stats>
+  </div>
+  <div class="col-lg-6">  
+    <app-player-detail-stats></app-player-detail-stats>
+  </div>
 </div>
-<div class="row col-lg-6">
-  <app-matches [player]="player.id"></app-matches>
-  <app-player-matches-stats></app-player-matches-stats>
-</div>
+<div class="row">
+  <div class="col-lg-6">
+    <app-matches [player]="player.id"></app-matches>
+  </div>
+  <div class="col-lg-6">
+    <app-player-matches-stats></app-player-matches-stats>
+  </div>
+  </div>
 </div>

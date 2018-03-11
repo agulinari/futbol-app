@@ -56,7 +56,7 @@
           <div class="col-md-4">
             <input type="number" formControlName="height" id="height" name="height" class="form-control input-transparent" [ngClass]="{'parsley-error' : height?.invalid && (height?.dirty || height?.touched) }">
           </div>
-          <div *ngIf="height?.invalid && height?.dirty || height?.touched)">
+          <div *ngIf="height?.invalid && (height?.dirty || height?.touched)">
               <div *ngIf="height?.errors.required" class="col-md-4 text-warning">
                 <small>Campo requerido</small>
               </div>

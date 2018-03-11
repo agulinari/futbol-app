@@ -8,8 +8,8 @@
         <div class="col-md-4">
           <input type="text" maxlength="30" formControlName="nickname" id="nickname" name="nickname" class="form-control input-transparent" >
         </div>
-        <div *ngIf="nickname.invalid && (nickname.dirty || nickname.touched)">
-            <div *ngIf="nickname.errors.required" class="col-md-4 text-warning">
+        <div *ngIf="playerForm.get('nickname').invalid && (playerForm.get('nickname').dirty || playerForm.get('nickname').touched)">
+            <div *ngIf="playerForm.get('nickname').errors.required" class="col-md-4 text-warning">
               <small>Campo requerido</small>
             </div>
         </div>

@@ -6,10 +6,10 @@
         <label class="col-form-label col-md-4" for="nickname">Apodo</label>
 
         <div class="col-md-4">
-          <input type="text" maxlength="30" formControlName="nickname" id="nickname" name="nickname" class="form-control input-transparent" >
+          <input type="text" maxlength="30" formControlName="nickname" id="nickname" name="nickname" class="form-control input-transparent" [ngClass]="{'parsley-error' : nickname?.invalid && (nickname?.dirty || nickname?.touched) }">
         </div>
-        <div *ngIf="playerForm.get('nickname').invalid && (playerForm.get('nickname').dirty || playerForm.get('nickname').touched)">
-            <div *ngIf="playerForm.get('nickname').errors.required" class="col-md-4 text-warning">
+        <div *ngIf="nickname?.invalid && (nickname?.dirty || nickname?.touched)">
+            <div *ngIf="nickname?.errors.required" class="col-md-4 text-warning">
               <small>Campo requerido</small>
             </div>
         </div>
@@ -18,10 +18,10 @@
         <label class="col-form-label col-md-4" for="firstname">Nombre</label>
 
         <div class="col-md-4">
-          <input type="text" maxlength="30" formControlName="firstname" id="firstname" name="firstname" class="form-control input-transparent" >
+          <input type="text" maxlength="30" formControlName="firstname" id="firstname" name="firstname" class="form-control input-transparent" [ngClass]="{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }">
         </div>
-        <div *ngIf="playerForm.get('firstname').invalid && (playerForm.get('firstname').dirty || playerForm.get('firstname').touched)">
-            <div *ngIf="playerForm.get('firstname').errors.required" class="col-md-4 text-warning">
+        <div *ngIf="firstname?.invalid && (firstname?.dirty || firstname?.touched)">
+            <div *ngIf="firstname?.errors.required" class="col-md-4 text-warning">
               <small>Campo requerido</small>
             </div>
         </div>
@@ -32,8 +32,8 @@
           <div class="col-md-4">
             <input type="text" maxlength="30" formControlName="lastname" id="lastname" name="lastname" class="form-control input-transparent" [ngClass]="{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }">
           </div>
-          <div *ngIf="playerForm.get('lastname').invalid && (playerForm.get('lastname').dirty || playerForm.get('lastname').touched)">
-              <div *ngIf="playerForm.get('lastname').errors.required" class="col-md-4 text-warning">
+          <div *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)">
+              <div *ngIf="lastname?.errors.required" class="col-md-4 text-warning">
                 <small>Campo requerido</small>
               </div>
           </div>
@@ -44,8 +44,8 @@
         <div class="col-md-4">
           <input type="date" formControlName="birthdate" id="birthdate" name="birthdate" class="form-control input-transparent" [ngClass]="{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }">
         </div>
-        <div *ngIf="playerForm.get('birthdate').invalid && (playerForm.get('birthdate').dirty || playerForm.get('birthdate').touched)">
-            <div *ngIf="playerForm.get('birthdate').errors.required" class="col-md-4 text-warning">
+        <div *ngIf="birthdate?.invalid && (birthdate?.dirty || birthdate?.touched)">
+            <div *ngIf="birthdate?.errors.required" class="col-md-4 text-warning">
               <small>Campo requerido</small>
             </div>
         </div>
@@ -56,14 +56,14 @@
           <div class="col-md-4">
             <input type="number" formControlName="height" id="height" name="height" class="form-control input-transparent" [ngClass]="{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }">
           </div>
-          <div *ngIf="playerForm.get('height').invalid && (playerForm.get('height').dirty || playerForm.get('height').touched)">
-              <div *ngIf="playerForm.get('height').errors.required" class="col-md-4 text-warning">
+          <div *ngIf="height?.invalid && height?.dirty || height?.touched)">
+              <div *ngIf="height?.errors.required" class="col-md-4 text-warning">
                 <small>Campo requerido</small>
               </div>
-              <div *ngIf="matchForm.get('height').errors.min" class="col-md-4 text-warning">
+              <div *ngIf="height?.errors.min" class="col-md-4 text-warning">
                 <small>Valor inv&aacute;lido</small>
               </div>
-              <div *ngIf="matchForm.get('height').errors.max" class="col-md-4 text-warning">
+              <div *ngIf="height?.errors.max" class="col-md-4 text-warning">
                 <small>Valor inv&aacute;lido</small>
               </div>
           </div>
@@ -74,14 +74,14 @@
           <div class="col-md-4">
             <input type="number" formControlName="weight" id="weight" name="weight" class="form-control input-transparent" [ngClass]="{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }">
           </div>
-          <div *ngIf="playerForm.get('weight').invalid && (playerForm.get('weight').dirty || playerForm.get('weight').touched)">
-              <div *ngIf="playerForm.get('weight').errors.required" class="col-md-4 text-warning">
+          <div *ngIf="weight?.invalid && (weight?.dirty || weight?.touched)">
+              <div *ngIf="weight?.errors.required" class="col-md-4 text-warning">
                 <small>Campo requerido</small>
               </div>
-              <div *ngIf="matchForm.get('weight').errors.min" class="col-md-4 text-warning">
+              <div *ngIf="weight?.errors.min" class="col-md-4 text-warning">
                 <small>Valor inv&aacute;lido</small>
               </div>
-              <div *ngIf="matchForm.get('weight').errors.max" class="col-md-4 text-warning">
+              <div *ngIf="weight?.errors.max" class="col-md-4 text-warning">
                 <small>Valor inv&aacute;lido</small>
               </div>
           </div>
@@ -92,8 +92,8 @@
           <div class="col-md-4">
             <input type="text" formControlName="position" id="position" name="position" class="form-control input-transparent" [ngClass]="{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }">
           </div>
-          <div *ngIf="playerForm.get('position').invalid && (playerForm.get('position').dirty || playerForm.get('position').touched)">
-              <div *ngIf="playerForm.get('position').errors.required" class="col-md-4 text-warning">
+          <div *ngIf="position?.invalid && (position?.dirty || position?.touched)">
+              <div *ngIf="position?.errors.required" class="col-md-4 text-warning">
                 <small>Campo requerido</small>
               </div>
           </div>
@@ -104,8 +104,8 @@
           <div class="col-md-4">
             <input type="text" formControlName="photo" id="photo" name="photo" class="form-control input-transparent" [ngClass]="{'parsley-error' : playerForm.get('nickname').invalid && (playerForm.get('team2.nickname').dirty || playerForm.get('nickname').touched) }">
           </div>
-          <div *ngIf="playerForm.get('photo').invalid && (playerForm.get('photo').dirty || playerForm.get('photo').touched)">
-              <div *ngIf="playerForm.get('photo').errors.required" class="col-md-4 text-warning">
+          <div *ngIf="photo?.invalid && (photo?.dirty || photo?.touched)">
+              <div *ngIf="photo?.errors.required" class="col-md-4 text-warning">
                 <small>Campo requerido</small>
               </div>
           </div>

@@ -188,8 +188,8 @@ export class MatchFormComponent implements OnInit {
       date: formModel.date as string,
       place: formModel.place as string,
       tournament: formModel.tournament as string,
-      summary_title: formModel.summary_title as string,
-      summary_body: formModel.summary_body as string,
+      summary_title: formModel.summaryTitle as string,
+      summary_body: formModel.summaryBody as string,
       team1: {
         name: formModel.team1.name as string,
         photo: formModel.team1.photo as string,
